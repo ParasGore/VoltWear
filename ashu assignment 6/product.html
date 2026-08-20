@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOLTWEAR — Product Design</title>
+<meta name="description" content="Four editions of the VOLTWEAR smart garment: technical views, sensor placement maps, conductive pathway architecture, materials and manufacturing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0E13'/%3E%3Cpath d='M6 7 L16 27 L26 7' stroke='%23C8FF3C' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;350;400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/core.css?v=6">
+<style>
+  .view-cell{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008));
+    border:1px solid var(--hairline);border-radius:var(--r-lg);padding:20px;position:relative;overflow:hidden}
+  .view-cell::after{content:attr(data-cap);position:absolute;left:20px;bottom:16px;
+    font-family:var(--f-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--titanium)}
+  .view-cell .inner{height:400px;display:flex;align-items:center;justify-content:center}
+  .cal{position:absolute;right:18px;top:18px;font-family:var(--f-mono);font-size:9.5px;color:var(--graphite-text);letter-spacing:.1em}
+  .zone-map{position:relative}
+  .zone-tag{position:absolute;font-family:var(--f-mono);font-size:9.5px;letter-spacing:.08em;
+    padding:4px 8px;border-radius:6px;background:rgba(10,14,19,.85);border:1px solid var(--hairline-2);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <a class="nav-logo" href="index.html"><span data-logo="mark" data-size="26"></span><span class="wm">Voltwear</span></a>
+    <nav class="nav-links">
+      <a href="index.html#technology">Technology</a><a href="product.html" class="active">Product</a>
+      <a href="app.html">App</a><a href="brand.html">Brand</a><a href="marketing.html">Ecosystem</a><a href="marketing.html#team">Team</a>
+      <a href="index.html#investors">Investors</a>
+    </nav>
+    <div class="nav-cta"><a href="index.html#reserve" class="btn btn-volt btn-sm">Reserve — $99</a>
+      <button class="burger" aria-label="Menu"><span></span></button></div>
+  </div>
+</header>
+
+<!-- ===== HEAD ===== -->
+<section class="section" style="padding-top:calc(var(--nav-h) + 90px);position:relative;overflow:hidden">
+  <div class="hero-bg"><div class="orb orb-a" style="opacity:.22;top:-40%"></div><div class="grid-fade"></div></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="eyebrow rv">Industrial design · DVT-3</div>
+    <h1 class="h-xl rv" style="max-width:18ch">Four bodies.<br>Four sensor architectures.</h1>
+    <p class="lede mt24 rv rv-d1">Every edition shares one platform — the VoltCore hub, the silver-yarn
+      bus, the six-layer laminate. What changes is where the intelligence sits on the body, and what
+      the fabric is asked to survive.</p>
+    <div class="grid g4 stat-strip mt64 rv rv-d2" style="gap:8px;border-top:1px solid var(--hairline);padding-top:26px">
+      <div><div class="h-sm num">31</div><div class="micro mt8">Nodes · Elite</div></div>
+      <div><div class="h-sm num">1.9 mm</div><div class="micro mt8">Laminate thickness</div></div>
+      <div><div class="h-sm num">180%</div><div class="micro mt8">Stretch recovery</div></div>
+      <div><div class="h-sm num">118 gsm</div><div class="micro mt8">Shell weight</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VARIANT SWITCHER ===== -->
+<section class="section-sm" style="position:sticky;top:var(--nav-h);z-index:90;background:rgba(5,7,10,.86);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);padding:16px 0">
+  <div class="container flex between center wrap gap-16">
+    <div class="seg seg-volt" id="variantSeg">
+      <button class="on" data-v="perf">01 · Performance Athlete</button>
+      <button data-v="gym">02 · Gym Performance</button>
+      <button data-v="posture">03 · Posture</button>
+      <button data-v="elite">04 · Elite</button>
+    </div>
+    <div class="flex gap-8 wrap">
+      <button class="btn btn-ghost btn-sm" id="tglTrace">Traces: on</button>
+      <button class="btn btn-ghost btn-sm" id="tglLabel">Callouts: off</button>
+    </div>
+  </div>
+</section>
+
+<div id="variantPanels"></div>
+
+<!-- ===== CONDUCTIVE PATHWAYS ===== -->
+<section class="section section-alt" id="pathways">
+  <div class="container">
+    <div class="grid g2 gap-40" style="align-items:center">
+      <div class="rv">
+        <div class="eyebrow">Design language</div>
+        <h2 class="h-lg">The circuit is<br>the ornament.</h2>
+        <p class="body mt24">Every competing smart garment hides its electronics and apologises for them.
+          We did the opposite. The silver-yarn bus is knitted on the <em>outside</em> of the shell in a
+          serpentine that follows the body's own fascia lines — the same lines a sports-tape therapist
+          would draw.</p>
+        <p class="body mt16">The result reads three ways at once: a neural arborisation, a PCB fan-out,
+          and a flow diagram of energy leaving the core and arriving at the limbs. At two metres it is a
+          graphic. At twenty centimetres it is engineering.</p>
+        <div class="mt40">
+          <div class="kv"><span class="k">Yarn</span><span class="v">Silver-plated nylon 6.6 · 12 Ω/m</span></div>
+          <div class="kv"><span class="k">Geometry</span><span class="v">Serpentine, 2.4 mm amplitude</span></div>
+          <div class="kv"><span class="k">Stretch tolerance</span><span class="v">180% with &lt;3% resistance drift</span></div>
+          <div class="kv"><span class="k">Knit process</span><span class="v">Santoni seamless, 3-yarn plating</span></div>
+          <div class="kv"><span class="k">Finish</span><span class="v">Matte graphite by day · retroreflective at night</span></div>
+        </div>
+      </div>
+      <div class="rv rv-d1 view-cell" data-cap="Conductive bus · detail 4:1">
+        <div class="cal">TRACE DETAIL</div>
+        <div class="inner" style="height:460px">
+          <svg viewBox="0 0 340 420" style="width:100%;height:100%">
+            <defs>
+              <linearGradient id="tg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#C8FF3C"/><stop offset=".5" stop-color="#3EE8B5"/><stop offset="1" stop-color="#2F80FF"/></linearGradient>
+              <pattern id="kn2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+                <path d="M0 4h8" stroke="rgba(255,255,255,.06)" stroke-width="1"/><path d="M4 0v8" stroke="rgba(255,255,255,.035)" stroke-width="1"/></pattern>
+            </defs>
+            <rect width="340" height="420" fill="url(#kn2)" rx="14"/>
+            <g fill="none" stroke="rgba(47,128,255,.22)" stroke-width="9" stroke-linecap="round">
+              <path d="M170 400 C170 340 150 300 120 270 C88 238 60 210 56 160"/>
+              <path d="M170 400 C170 340 190 300 220 270 C252 238 280 210 284 160"/>
+              <path d="M170 400 C170 320 170 240 170 170 C170 120 170 80 170 40"/>
+              <path d="M170 250 C140 236 110 232 84 240"/>
+              <path d="M170 250 C200 236 230 232 256 240"/>
+              <path d="M170 150 C144 138 120 132 100 120"/>
+              <path d="M170 150 C196 138 220 132 240 120"/>
+            </g>
+            <g fill="none" stroke="url(#tg)" stroke-width="2.2" stroke-linecap="round" opacity=".95">
+              <path d="M170 400 C170 340 150 300 120 270 C88 238 60 210 56 160"/>
+              <path d="M170 400 C170 340 190 300 220 270 C252 238 280 210 284 160"/>
+              <path d="M170 400 C170 320 170 240 170 170 C170 120 170 80 170 40"/>
+              <path d="M170 250 C140 236 110 232 84 240"/>
+              <path d="M170 250 C200 236 230 232 256 240"/>
+              <path d="M170 150 C144 138 120 132 100 120"/>
+              <path d="M170 150 C196 138 220 132 240 120"/>
+            </g>
+            <g class="trace-anim" fill="none" stroke="#C8FF3C" stroke-width="2.6" stroke-linecap="round"
+               stroke-dasharray="16 240" style="filter:drop-shadow(0 0 6px rgba(200,255,60,.9))">
+              <path d="M170 400 C170 320 170 240 170 170 C170 120 170 80 170 40"><animate attributeName="stroke-dashoffset" from="256" to="0" dur="3s" repeatCount="indefinite"/></path>
+              <path d="M170 400 C170 340 150 300 120 270 C88 238 60 210 56 160"><animate attributeName="stroke-dashoffset" from="256" to="0" dur="3.6s" repeatCount="indefinite"/></path>
+              <path d="M170 400 C170 340 190 300 220 270 C252 238 280 210 284 160"><animate attributeName="stroke-dashoffset" from="256" to="0" dur="4.2s" repeatCount="indefinite"/></path>
+            </g>
+            <g>
+              <circle cx="170" cy="250" r="7" fill="#0A0E13" stroke="#C8FF3C" stroke-width="1.5"/>
+              <circle cx="170" cy="150" r="7" fill="#0A0E13" stroke="#3EE8B5" stroke-width="1.5"/>
+              <rect x="154" y="386" width="32" height="22" rx="8" fill="#0A0E13" stroke="#8B5CFF" stroke-width="1.5"/>
+              <circle cx="56" cy="160" r="5" fill="#2F80FF"/><circle cx="284" cy="160" r="5" fill="#2F80FF"/>
+              <circle cx="170" cy="40" r="5" fill="#2F80FF"/>
+            </g>
+            <g font-family="JetBrains Mono, monospace" font-size="8" fill="#7C8A9C" letter-spacing=".08em">
+              <text x="196" y="398">VOLTCORE DOCK</text><text x="184" y="248">CORE JUNCTION</text>
+              <text x="184" y="148">STERNAL BUS</text><text x="12" y="176">SLEEVE TAP</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g3 mt64">
+      <div class="card rv"><span class="tag tag-arc">Motif 01</span><div class="h-sm mt16">Arborisation</div>
+        <p class="small mt8">Traces branch at a constant 34° like dendrites. Signals divide, never cross —
+          crosstalk-free by geometry, not by shielding.</p></div>
+      <div class="card rv rv-d1"><span class="tag tag-volt">Motif 02</span><div class="h-sm mt16">Fan-out</div>
+        <p class="small mt8">At the rib dock the bus fans into 31 lanes across 28 mm — a literal PCB
+          escape pattern, knitted rather than etched.</p></div>
+      <div class="card rv rv-d2"><span class="tag tag-violet">Motif 03</span><div class="h-sm mt16">Flow field</div>
+        <p class="small mt8">Line weight tapers from 2.4 mm at the core to 0.9 mm at the extremities, so
+          the graphic reads as energy dissipating outward.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPLODED ENGINEERING VIEW ===== -->
+<section class="section" id="exploded">
+  <div class="container">
+    <div class="tc mb64 rv">
+      <div class="eyebrow no-rule" style="display:flex;justify-content:center">Render set C</div>
+      <h2 class="h-xl">Exploded assembly</h2>
+      <p class="lede mx mt24" style="text-align:center">Six layers, one hub, thirty-one nodes —
+        separated along the Z axis.</p>
+    </div>
+    <div class="grid" style="grid-template-columns:1.25fr .75fr;gap:40px;align-items:center">
+      <div class="rv view-cell" data-cap="Exploded assembly · 1:1.4" style="padding:30px">
+        <div class="cal">ASSY-VW1-EXP</div>
+        <div id="explodedView" style="position:relative;height:660px"></div>
+      </div>
+      <div class="rv rv-d1">
+        <ol id="expList" style="counter-reset:x"></ol>
+        <div class="card-flat mt40">
+          <div class="micro mb16">Integration method</div>
+          <p class="small">Sensor islands are <strong>ultrasonically welded</strong> to the dielectric film,
+            never stitched — no needle holes, no failure initiation points. The island-and-serpentine
+            architecture means the rigid parts never stretch and the stretchy parts never carry a chip.</p>
+          <div class="flex gap-8 wrap mt24">
+            <span class="tag">Ultrasonic weld</span><span class="tag">No through-stitching</span>
+            <span class="tag">IPX7 encapsulation</span><span class="tag">Field-replaceable hub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MATERIALS ===== -->
+<section class="section section-alt" id="materials">
+  <div class="container">
+    <div class="flex between wrap gap-24 mb64 rv" style="align-items:flex-end">
+      <div><div class="eyebrow">Materials</div><h2 class="h-xl">Textile bill of materials</h2></div>
+      <p class="body" style="max-width:36ch">Specified to be manufacturable today, on Santoni seamless
+        machines already installed in our partner facility.</p>
+    </div>
+
+    <div class="tbl-wrap rv">
+      <table class="tbl">
+        <thead><tr><th>Zone</th><th>Construction</th><th>Composition</th><th>Weight</th><th>Function</th></tr></thead>
+        <tbody>
+          <tr><td>Chest & upper back panel</td><td>Warp-knit power mesh</td><td>72% recycled PA6.6 / 28% Lycra® Sport</td><td>142 gsm</td><td>Electrode compression — holds 4.2 kPa contact pressure</td></tr>
+          <tr><td>Side ribs & underarm</td><td>Laser-perforated jacquard</td><td>78% PA6.6 / 22% elastane</td><td>96 gsm</td><td>Ventilation, 2,140 perforations per side</td></tr>
+          <tr><td>Sleeve & shoulder</td><td>4-way AeroKnit™</td><td>78% recycled nylon / 22% Lycra®</td><td>118 gsm</td><td>Unrestricted scapular glide</td></tr>
+          <tr><td>Lumbar band</td><td>Double-jersey with TPU rib</td><td>Nylon / elastane / TPU</td><td>168 gsm</td><td>Anchors the L3 IMU against ride-up</td></tr>
+          <tr><td>Next-to-skin liner</td><td>Micro-modal jersey</td><td>Jade-mineral modal + Polygiene®</td><td>84 gsm</td><td>Thermal comfort, odour control</td></tr>
+          <tr><td>Signal bus</td><td>3-yarn plated serpentine</td><td>Silver-plated nylon (12 Ω/m)</td><td>—</td><td>31-lane conductive routing</td></tr>
+          <tr><td>Electrode pads</td><td>Moulded micro-pillar array</td><td>Ag/AgCl-loaded silicone</td><td>—</td><td>Dry biopotential contact &lt;12 kΩ</td></tr>
+          <tr><td>Hem & cuff</td><td>Silicone-dot elastic</td><td>Elastane / silicone print</td><td>—</td><td>Zero migration during sprint</td></tr>
+          <tr><td>Elite reinforcement</td><td>Bonded ripstop grid</td><td>Dyneema® fibre grid</td><td>+22 gsm</td><td>Abrasion + tear resistance</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid g3 mt64">
+      <div class="card rv">
+        <div class="h-sm">Stretch zones</div>
+        <p class="small mt16">Mapped to the four axes the torso actually moves in.</p>
+        <div class="mt24" style="display:grid;gap:14px">
+          <div><div class="flex between"><span class="small">Lateral (rib expansion)</span><span class="micro">180%</span></div><div class="bar mt8" data-fill="92"><i></i></div></div>
+          <div><div class="flex between"><span class="small">Vertical (reach)</span><span class="micro">150%</span></div><div class="bar mt8" data-fill="76"><i></i></div></div>
+          <div><div class="flex between"><span class="small">Diagonal (rotation)</span><span class="micro">165%</span></div><div class="bar mt8" data-fill="84"><i></i></div></div>
+          <div><div class="flex between"><span class="small">Electrode zone (locked)</span><span class="micro">108%</span></div><div class="bar mt8" data-fill="26"><i style="background:linear-gradient(90deg,#FF5A3C,#FFB020)"></i></div></div>
+        </div>
+      </div>
+      <div class="card rv rv-d1">
+        <div class="h-sm">Ventilation strategy</div>
+        <p class="small mt16">Eleven mapped zones, driven by a thermal study of 240 athletes under load.</p>
+        <div class="mt24" style="display:grid;gap:2px">
+          <div class="kv"><span class="k">Mid-back</span><span class="v">Open jacquard · 4.1 mm</span></div>
+          <div class="kv"><span class="k">Underarm gusset</span><span class="v">Laser perf · 0.8 mm ⌀</span></div>
+          <div class="kv"><span class="k">Lateral ribs</span><span class="v">Laser perf · graduated</span></div>
+          <div class="kv"><span class="k">Sternum</span><span class="v">Sealed — sensor zone</span></div>
+          <div class="kv"><span class="k">Lumbar</span><span class="v">Sealed — IMU anchor</span></div>
+        </div>
+      </div>
+      <div class="card rv rv-d2">
+        <div class="h-sm">Care & durability</div>
+        <p class="small mt16">Validated to consumer-grade abuse, not lab-grade caution.</p>
+        <div class="mt24" style="display:grid;gap:2px">
+          <div class="kv"><span class="k">Machine wash</span><span class="v">60 cycles, 40 °C, hub removed</span></div>
+          <div class="kv"><span class="k">Signal drift @ 60 washes</span><span class="v c-volt">&lt; 4%</span></div>
+          <div class="kv"><span class="k">Martindale abrasion</span><span class="v">40,000 rubs</span></div>
+          <div class="kv"><span class="k">Sweat corrosion (ISO 105-E04)</span><span class="v">Grade 4–5</span></div>
+          <div class="kv"><span class="k">Expected life</span><span class="v">14 months / 400 sessions</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RENDER SETS ===== -->
+<section class="section" id="renders">
+  <div class="container">
+    <div class="tc mb64 rv">
+      <div class="eyebrow no-rule" style="display:flex;justify-content:center">Visualisation programme</div>
+      <h2 class="h-xl">Three render sets</h2>
+      <p class="lede mx mt24" style="text-align:center">Art direction for the full CG production package.
+        Complete shot lists and engine-ready prompts live in <span class="mono c-volt">docs/RENDER-PROMPTS.md</span>.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card rv" style="padding:0;overflow:hidden">
+        <div style="height:300px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 30%,rgba(47,128,255,.16),transparent 60%),#07090D;border-bottom:1px solid var(--hairline)">
+          <div style="width:210px" data-shirt data-view="front" data-variant="elite" data-flow="false" data-sensors="false"></div>
+        </div>
+        <div style="padding:26px">
+          <span class="tag tag-arc">Set A</span><div class="h-sm mt16">Dark studio · keynote</div>
+          <p class="small mt8">Seamless black cyclorama, single 4×6 softbox at 45°, two rim strips in
+            Arc Blue and Volt. Garment floats, no mannequin. 85 mm, f/8, 1:1 macro inserts of the
+            electrode pillars and the hub dock.</p>
+        </div>
+      </div>
+      <div class="card rv rv-d1" style="padding:0;overflow:hidden">
+        <div style="height:300px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,rgba(200,255,60,.14),transparent 60%),#07090D;border-bottom:1px solid var(--hairline)">
+          <div style="width:210px" data-shirt data-view="front" data-variant="perf"></div>
+        </div>
+        <div style="padding:26px">
+          <span class="tag tag-volt">Set B</span><div class="h-sm mt16">Athlete in motion</div>
+          <p class="small mt8">Three environments: 5 a.m. wet asphalt, a concrete strength hall lit by
+            a single north window, and an alpine climb at golden hour. 1/1600 s, visible sweat,
+            traces catching the light. Never a smile — always effort.</p>
+        </div>
+      </div>
+      <div class="card rv rv-d2" style="padding:0;overflow:hidden">
+        <div style="height:300px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,rgba(139,92,255,.16),transparent 60%),#07090D;border-bottom:1px solid var(--hairline)">
+          <div style="width:210px" data-shirt data-view="back" data-variant="elite" data-flow="false"></div>
+        </div>
+        <div style="padding:26px">
+          <span class="tag tag-violet">Set C</span><div class="h-sm mt16">Exploded engineering</div>
+          <p class="small mt8">Layers separated on Z, 22° isometric, technical callouts in JetBrains Mono.
+            Ghosted shell at 12% opacity so the sensor plane reads through. Blueprint grid at 4% white.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MANUFACTURING ===== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="grid g2 gap-40">
+      <div class="rv">
+        <div class="eyebrow">Manufacturing</div>
+        <h2 class="h-lg">Manufacturable<br>this quarter.</h2>
+        <p class="body mt24">Nothing in this design requires a process that does not already exist at
+          scale. Santoni seamless knitting, ultrasonic welding and TPU lamination are all standard
+          performance-apparel operations. The only novel step is the conductive-yarn plating, and we
+          own the tooling for it.</p>
+        <div class="mt40">
+          <div class="kv"><span class="k">Primary facility</span><span class="v">Bình Dương, Vietnam · ISO 13485</span></div>
+          <div class="kv"><span class="k">Line capacity</span><span class="v">1.2M units / year at full ramp</span></div>
+          <div class="kv"><span class="k">Takt time</span><span class="v">41 s / garment</span></div>
+          <div class="kv"><span class="k">Yield at DVT-3</span><span class="v c-volt">96.4%</span></div>
+          <div class="kv"><span class="k">BOM cost (at 100k)</span><span class="v">$146</span></div>
+          <div class="kv"><span class="k">Second source</span><span class="v">Porto, Portugal · EU volume</span></div>
+        </div>
+      </div>
+      <div class="rv rv-d1">
+        <div class="eyebrow">Size & fit</div>
+        <h2 class="h-lg">Nine sizes,<br>two fits.</h2>
+        <p class="body mt24">Electrode position is only useful if it lands on the right anatomy. We grade
+          sensor placement independently of the size grade — a size S and a size XXL both put the V5
+          electrode on the fifth intercostal space.</p>
+        <div class="tbl-wrap mt40">
+          <table class="tbl"><thead><tr><th>Size</th><th>Chest</th><th>Electrode grade</th></tr></thead>
+          <tbody>
+            <tr><td>XS / S / M</td><td>81–99 cm</td><td>Grade A · −8 mm pitch</td></tr>
+            <tr><td>L / XL</td><td>99–114 cm</td><td>Grade B · nominal</td></tr>
+            <tr><td>XXL / 3XL</td><td>114–130 cm</td><td>Grade C · +11 mm pitch</td></tr>
+            <tr><td>Tall S–XL</td><td>+6 cm torso</td><td>Grade B · +6 mm drop</td></tr>
+          </tbody></table>
+        </div>
+        <p class="small mt16">Athletic fit (compression, −4 cm ease) and Everyday fit (−1 cm ease) share
+          the same sensor grade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="flex between wrap gap-24">
+      <a class="nav-logo" href="index.html"><span data-logo="mark" data-size="26"></span><span class="wm">Voltwear</span></a>
+      <div class="flex gap-24 wrap">
+        <a href="index.html">Home</a><a href="app.html">App</a><a href="brand.html">Brand</a>
+        <a href="marketing.html">Ecosystem</a><a href="index.html#investors">Investors</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-year></span> VOLTWEAR, Inc.</span>
+      <span>Technical drawings are design intent, not release-to-manufacture.</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/shirt.js?v=6"></script>
+<script>
+window.VWPage = function(){
+
+/* ---------- VARIANT DATA ---------- */
+var VARIANTS = {
+  perf:{
+    n:"01", name:"Performance Athlete Edition", price:"$99", color:"#2F80FF",
+    who:"Runners · cyclists · triathletes",
+    line:"Built for the two hours where a 1% efficiency gain is the whole race.",
+    body:"Sensor mass is pushed high onto the sternum and low onto the obliques, keeping the mid-torso free of hardware where a race vest or a hydration pack sits. The respiration bands are the signature feature — direct tidal-volume measurement lets us model ventilatory threshold without a mask.",
+    sensors:"10 nodes · 2 EMG · 3 ECG · 1 IMU · 2 respiration · 1 thermal",
+    specs:[["Fit","Athletic compression · −4 cm ease"],["Weight","132 g (size M)"],["Signature metric","Ventilatory threshold, live"],
+      ["Running metrics","Cadence, GCT, vertical oscillation, L/R contact balance"],["Hub position","Left rib · vest-compatible"],
+      ["Colourways","Obsidian / Arc Blue · Fog / Volt"],["Battery","9 days · 34 h continuous GPS-synced"]],
+    feats:[["Ventilatory threshold","Two respiration bands measure rib expansion directly. No mask, no lab, every run."],
+      ["Cadence & GCT from the chest","The sternal IMU sits on the body's centre of mass — cleaner than any foot pod."],
+      ["Thermal drift warning","Core-proxy temperature flags the exact minute pace decay becomes thermal, not muscular."]]
+  },
+  gym:{
+    n:"02", name:"Gym Performance Edition", price:"$99", color:"#C8FF3C",
+    who:"Strength · CrossFit · hypertrophy",
+    line:"The first garment that can tell you which muscle actually did the rep.",
+    body:"EMG density is concentrated over the prime movers of the pressing and pulling chains: pectoralis, anterior deltoid, latissimus, trapezius and the full erector column. The compression grade is one step firmer so electrodes hold contact through a bench arch or a rack pull.",
+    sensors:"10 nodes · 6 EMG · 2 ECG · 2 IMU",
+    specs:[["Fit","Locked compression · −6 cm ease"],["Weight","148 g (size M)"],["Signature metric","Muscle share per set"],
+      ["Lifting metrics","Mean concentric velocity, time under tension, L/R symmetry, effective reps"],
+      ["Hub position","Left rib · low profile under a barbell"],["Colourways","Obsidian / Volt · Chalk / Graphite"],["Battery","9 days"]],
+    feats:[["Muscle share","See the exact percentage split between pec, delt and tricep on every press. Fix your technique with evidence."],
+      ["Effective reps","EMG amplitude tells us when a rep entered true mechanical failure territory. Junk volume becomes visible."],
+      ["Lumbar shear alert","The L3 IMU fires a haptic pulse the instant your spine leaves neutral under load."]]
+  },
+  posture:{
+    n:"03", name:"Posture Edition", price:"$79", color:"#3EE8B5",
+    who:"Office workers · students · engineers · gamers",
+    line:"Eleven hours in a chair is an athletic event. Nobody trains for it.",
+    body:"A softer hand, a longer body and a relaxed −1 cm ease so it disappears under a shirt. The intelligence moves entirely to the posterior chain: cervical tilt at C7, kyphosis at T4, lordosis at L3, plus EMG on the overworked upper traps and the sleeping lower traps.",
+    sensors:"9 nodes · 6 EMG · 3 IMU",
+    specs:[["Fit","Everyday · −1 cm ease, wearable under a shirt"],["Weight","118 g (size M)"],["Signature metric","Cervical angle, live"],
+      ["Desk metrics","Forward-head degrees, kyphosis index, slump events/hour, HRV stress"],
+      ["Haptic","Dual actuators between the scapulae · 3 escalating patterns"],
+      ["Colourways","Slate / Mint · Ink / Fog · Sand / Graphite"],["Battery","11 days (low duty cycle)"]],
+    feats:[["Forward-head degrees","Every 15° of forward head adds 12 kg of load to your cervical spine. We show you the number in real time."],
+      ["Trap imbalance","Upper traps overworking while lower traps sleep is the signature of desk posture. EMG proves it, then coaches it."],
+      ["Haptic, not notification","A tap between the shoulder blades. No phone, no buzz, no shame — just a physical reminder your body responds to."]]
+  },
+  elite:{
+    n:"04", name:"Elite Edition", price:"$149", color:"#EEF2F7",
+    who:"Professional teams · federations · the obsessed",
+    line:"Everything the platform can do, with nothing removed for cost.",
+    body:"A numbered run of 2,000. Titanium-shell VoltCore Pro, five-lead medical-grade ECG, a sixteen-channel EMG array covering the full trunk, dual respiration, dual thermistors and a Dyneema®-reinforced bonded seam architecture. Delivered in an anodised aluminium case with a calibration certificate signed by the technician who tested it.",
+    sensors:"31 nodes · 16 EMG · 5 ECG · 6 IMU · 2 respiration · 2 thermal",
+    specs:[["Fit","Bespoke — 14-point body scan via the app"],["Weight","156 g (size M)"],["Signature metric","Full-trunk neuromuscular map"],
+      ["ECG","5-lead, 1 kHz, clinical morphology, exportable PDF"],["Hub","VoltCore Pro · titanium · 9-day cell · UWB"],
+      ["Case","Anodised 6061 aluminium, magnetic dock, travel charger"],["Colourways","Titanium / Obsidian · numbered 001–2000"]],
+    feats:[["Medical-grade export","A five-lead trace your cardiologist will actually accept. PDF and EDF export, HIPAA-compliant sharing."],
+      ["Full-trunk EMG","Sixteen channels covering anterior and posterior chain simultaneously — the density of a university lab, wearable."],
+      ["Team telemetry","Up to 40 athletes streaming live to one sideline tablet over UWB. Sub-100 ms, no phone in the loop."]]
+  }
+};
+
+var ORDER=["perf","gym","posture","elite"];
+var IDS={perf:"perf",gym:"gym",posture:"posture",elite:"elite"};
+var showTraces=true, showLabels=false;
+
+function panel(k){
+  var v=VARIANTS[k];
+  var h='<section class="section" id="'+IDS[k]+'" data-panel="variant" data-val="'+k+'">';
+  h+='<div class="container">';
+
+  /* header */
+  h+='<div class="flex between wrap gap-24 mb64" style="align-items:flex-end">';
+  h+='<div><div class="eyebrow">Edition '+v.n+' · '+v.who+'</div>';
+  h+='<h2 class="h-xl">'+v.name.replace(" Edition","")+'<br><span class="c-dim">Edition</span></h2></div>';
+  h+='<div style="text-align:right"><div class="h-md num">'+v.price+'</div><div class="micro mt8">'+v.sensors+'</div></div></div>';
+
+  h+='<p class="lede mb40">'+v.line+'</p>';
+
+  /* three views */
+  h+='<div class="grid g3">';
+  [["front","Front elevation"],["back","Rear elevation"],["side","Side profile"]].forEach(function(vw,i){
+    h+='<div class="view-cell rv rv-d'+i+'" data-cap="'+vw[1]+'"><div class="cal">VW-'+v.n+'-'+vw[0].toUpperCase().slice(0,3)+'</div>'+
+       '<div class="inner"><div style="width:100%;max-width:300px" data-shirt data-view="'+vw[0]+'" data-variant="'+k+'" '+
+       'data-traces="'+showTraces+'" data-flow="'+showTraces+'"></div></div></div>';
+  });
+  h+='</div>';
+
+  /* sensor map */
+  h+='<div class="grid mt40" style="grid-template-columns:1.15fr .85fr;gap:40px;align-items:center">';
+  h+='<div class="view-cell rv" data-cap="Sensor placement map · anterior + posterior" style="padding:26px">'+
+     '<div class="cal">MAP-VW'+v.n+'</div>'+
+     '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">'+
+     '<div data-shirt data-view="front" data-variant="'+k+'" data-labels="'+showLabels+'" data-traces="'+showTraces+'" data-flow="false"></div>'+
+     '<div data-shirt data-view="back" data-variant="'+k+'" data-labels="'+showLabels+'" data-traces="'+showTraces+'" data-flow="false"></div>'+
+     '</div></div>';
+  h+='<div class="rv rv-d1"><div class="eyebrow">Design intent</div><p class="body">'+v.body+'</p>'+
+     VWShirt.legend()+'<div class="mt40">';
+  v.specs.forEach(function(s){ h+='<div class="kv"><span class="k">'+s[0]+'</span><span class="v">'+s[1]+'</span></div>'; });
+  h+='</div></div></div>';
+
+  /* three features */
+  h+='<div class="grid g3 mt64">';
+  v.feats.forEach(function(f,i){
+    h+='<div class="card rv rv-d'+i+'"><div style="width:30px;height:2px;background:'+v.color+';margin-bottom:20px"></div>'+
+       '<div class="h-sm">'+f[0]+'</div><p class="small mt16">'+f[1]+'</p></div>';
+  });
+  h+='</div></div></section>';
+  return h;
+}
+
+function build(){
+  document.getElementById('variantPanels').innerHTML = ORDER.map(panel).join('');
+  /* mount shirts inside newly built panels */
+  document.querySelectorAll('#variantPanels [data-shirt]').forEach(function(el){
+    el.innerHTML = VWShirt.render({
+      view:el.getAttribute('data-view'), variant:el.getAttribute('data-variant'),
+      labels:el.getAttribute('data-labels')==='true',
+      traces:el.getAttribute('data-traces')!=='false',
+      flow:el.getAttribute('data-flow')!=='false'
+    });
+  });
+  document.querySelectorAll('#variantPanels .rv').forEach(function(e){ e.classList.add('in'); });
+  select(current);
+}
+
+var current = 'perf';
+function select(k){
+  current = k;
+  document.querySelectorAll('[data-panel="variant"]').forEach(function(p){
+    p.style.display = p.getAttribute('data-val')===k ? '' : 'none';
+  });
+  document.querySelectorAll('#variantSeg button').forEach(function(b){
+    b.classList.toggle('on', b.getAttribute('data-v')===k);
+  });
+}
+
+document.getElementById('variantSeg').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b) return;
+  select(b.getAttribute('data-v'));
+  window.scrollTo({top:document.getElementById('variantPanels').offsetTop-140,behavior:'smooth'});
+});
+document.getElementById('tglTrace').addEventListener('click',function(){
+  showTraces=!showTraces; this.textContent='Traces: '+(showTraces?'on':'off'); build();
+});
+document.getElementById('tglLabel').addEventListener('click',function(){
+  showLabels=!showLabels; this.textContent='Callouts: '+(showLabels?'on':'off'); build();
+});
+
+var hash=(location.hash||'').replace('#','');
+if(VARIANTS[hash]) current=hash;
+build();
+
+/* ---------- EXPLODED VIEW ---------- */
+var EXP=[
+  {t:"Outer shell — AeroKnit™",     s:"78% recycled nylon · 118 gsm · UPF 40",  c:"#EEF2F7", g:"knit"},
+  {t:"Silver-yarn signal bus",       s:"31 lanes · serpentine · 12 Ω/m",         c:"#2F80FF", g:"trace"},
+  {t:"TPU dielectric film",          s:"0.06 mm · thermally bonded · IPX7",      c:"#8B5CFF", g:"film"},
+  {t:"Sensor plane",                 s:"31 nodes on polyimide islands",          c:"#C8FF3C", g:"nodes"},
+  {t:"Dry electrode array",          s:"Ag/AgCl micro-pillars · <12 kΩ",         c:"#FF3B5C", g:"pads"},
+  {t:"CoolTouch liner",              s:"Micro-modal · Polygiene® · 84 gsm",      c:"#3EE8B5", g:"knit"}
+];
+function plate(i,L){
+  var p=VWShirt.paths.front, id='ex'+i, g='';
+  if(L.g==='trace') VWShirt.traces.front.forEach(function(d){ g+='<path d="'+d+'" fill="none" stroke="'+L.c+'" stroke-width="2" stroke-linecap="round" opacity=".85"/>'; });
+  if(L.g==='nodes') VWShirt.map('elite','front').forEach(function(n){
+    g+='<circle cx="'+n.x+'" cy="'+n.y+'" r="7" fill="#0A0E13" stroke="'+L.c+'" stroke-width="1.8"/>'; });
+  if(L.g==='pads') VWShirt.map('elite','front').filter(function(n){return n.t==='ecg'||n.t==='emg';}).forEach(function(n){
+    g+='<rect x="'+(n.x-11)+'" y="'+(n.y-11)+'" width="22" height="22" rx="7" fill="'+L.c+'" opacity=".3" stroke="'+L.c+'" stroke-width="1.4"/>'; });
+  if(L.g==='film') g+='<path d="'+p+'" fill="'+L.c+'" opacity=".07"/>';
+  if(L.g==='knit') g+='<path d="'+p+'" fill="url(#kx'+id+')" opacity=".9"/>';
+  return '<svg viewBox="0 0 420 560" style="width:100%;height:100%">'+
+    '<defs><pattern id="kx'+id+'" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">'+
+    '<path d="M0 3.5h7" stroke="'+L.c+'22" stroke-width=".9"/><path d="M3.5 0v7" stroke="'+L.c+'14" stroke-width=".9"/></pattern>'+
+    '<clipPath id="cp'+id+'"><path d="'+p+'"/></clipPath></defs>'+
+    '<path d="'+p+'" fill="rgba(10,14,19,.72)" stroke="'+L.c+'" stroke-width="1.4" opacity=".95"/>'+
+    '<g clip-path="url(#cp'+id+')">'+g+'</g></svg>';
+}
+var host=document.getElementById('explodedView');
+if(host){
+  var html='';
+  EXP.forEach(function(L,i){
+    var y = i*96 - 40, x = i*26;
+    html+='<div style="position:absolute;left:'+(6+x)+'px;top:'+y+'px;width:250px;height:334px;'+
+      'transform:skewY(-9deg);filter:drop-shadow(0 22px 26px rgba(0,0,0,.75));z-index:'+(10-i)+'">'+plate(i,L)+'</div>';
+    html+='<div style="position:absolute;left:'+(280+x)+'px;top:'+(y+128)+'px;display:flex;align-items:center;gap:10px;z-index:20">'+
+      '<span style="width:36px;height:1px;background:'+L.c+';opacity:.5;display:block"></span>'+
+      '<span style="display:block"><span style="font-family:var(--f-mono);font-size:9px;color:'+L.c+';letter-spacing:.14em">0'+(i+1)+'</span>'+
+      '<span style="display:block;font-size:12.5px;font-weight:550;letter-spacing:-.01em;margin-top:1px">'+L.t+'</span>'+
+      '<span style="display:block;font-size:10.5px;color:var(--titanium);margin-top:2px">'+L.s+'</span></span></div>';
+  });
+  host.innerHTML=html;
+  document.getElementById('expList').innerHTML = EXP.map(function(L,i){
+    return '<li class="kv"><span class="k"><span class="mono" style="color:'+L.c+'">0'+(i+1)+'</span> &nbsp;'+L.t+'</span><span class="v small">'+L.s+'</span></li>';
+  }).join('');
+}
+};
+</script>
+<script src="assets/js/core.js?v=6"></script>
+</body>
+</html>
