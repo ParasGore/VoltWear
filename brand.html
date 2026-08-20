@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOLTWEAR — Brand System</title>
+<meta name="description" content="The VOLTWEAR brand: naming study, logo architecture, colour system, typography, voice and application.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0E13'/%3E%3Cpath d='M6 7 L16 27 L26 7' stroke='%23C8FF3C' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;350;400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/core.css?v=6">
+<style>
+  .logo-cell{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+    border:1px solid var(--hairline);border-radius:var(--r-lg);padding:32px;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;min-height:210px;gap:18px;position:relative}
+  .logo-cell .cap{position:absolute;left:18px;top:16px;font-family:var(--f-mono);font-size:9.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--titanium)}
+  .wordmark{font-family:var(--f-display);font-weight:600;letter-spacing:.2em;text-transform:uppercase;line-height:1}
+  .score{display:flex;align-items:center;gap:3px}
+  .score i{width:13px;height:4px;border-radius:2px;background:rgba(255,255,255,.13);display:block}
+  .score i.on{background:var(--volt)}
+  .name-row{display:grid;grid-template-columns:150px 1fr 190px 120px;gap:24px;padding:26px 0;
+    border-bottom:1px solid var(--hairline);align-items:start}
+  @media(max-width:900px){.name-row{grid-template-columns:1fr;gap:12px}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <a class="nav-logo" href="index.html"><span data-logo="mark" data-size="26"></span><span class="wm">Voltwear</span></a>
+    <nav class="nav-links"><a href="index.html#technology">Technology</a><a href="product.html">Product</a>
+      <a href="app.html">App</a><a href="brand.html" class="active">Brand</a><a href="marketing.html">Ecosystem</a><a href="marketing.html#team">Team</a>
+      <a href="index.html#investors">Investors</a></nav>
+    <div class="nav-cta"><a href="index.html#reserve" class="btn btn-volt btn-sm">Reserve — $99</a>
+      <button class="burger" aria-label="Menu"><span></span></button></div>
+  </div>
+</header>
+
+<section class="section" style="padding-top:calc(var(--nav-h) + 90px);position:relative;overflow:hidden">
+  <div class="hero-bg"><div class="orb orb-c" style="opacity:.16;top:-20%;left:40%"></div><div class="grid-fade"></div></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="eyebrow rv">Brand system · v1.0</div>
+    <h1 class="h-xl rv">A brand built to be<br>believed by athletes,<br>doctors and investors.</h1>
+    <p class="lede mt24 rv rv-d1">One identity has to survive three audiences with nothing in common —
+      a sprinter at 5 a.m., a cardiologist reviewing a trace, and a partner at a growth fund.
+      Everything below is designed for that intersection: cold, precise, and unmistakably alive.</p>
+  </div>
+</section>
+
+<!-- ===== NAMING ===== -->
+<section class="section section-alt" id="naming">
+  <div class="container">
+    <div class="eyebrow rv">01 · Naming</div>
+    <h2 class="h-xl mb40 rv">Is "VoltWear"<br>the right name?</h2>
+
+    <div class="grid g2 gap-40 mb64">
+      <div class="card rv" style="padding:32px">
+        <div class="flex between center mb24"><span class="tag">Incumbent</span>
+          <div class="score" title="Premium score 6.4/10">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i>
+          </div></div>
+        <div class="wordmark" style="font-size:30px">Voltwear</div>
+        <p class="body mt24"><strong class="c-volt">What works:</strong> "Volt" is the single most
+          ownable word in the category. It is short, phonetically hard, universally understood, and it
+          says <em>electrical</em> — which is literally the technical differentiator.</p>
+        <p class="body mt16"><strong class="c-ember">What doesn't:</strong> the "-wear" suffix caps the
+          company at apparel. It is the most crowded suffix in consumer goods (Athleta, Lululemon-adjacent,
+          Under Armour's "wear" lines, 400+ trademarks). It reads as a product description, not a company.
+          Neuralink is not "BrainWear". WHOOP is not "StrapWear".</p>
+        <div class="mt24"><div class="kv"><span class="k">Premium score</span><span class="v">6.4 / 10</span></div>
+          <div class="kv"><span class="k">Trademark difficulty</span><span class="v c-ember">High — crowded class 25 + 9</span></div>
+          <div class="kv"><span class="k">Category headroom</span><span class="v c-ember">Limited to apparel</span></div>
+          <div class="kv"><span class="k">Verdict</span><span class="v">Excellent product name. Weak platform name.</span></div></div>
+      </div>
+
+      <div class="card rv rv-d1" style="padding:32px;background:linear-gradient(150deg,rgba(200,255,60,.08),rgba(47,128,255,.05))">
+        <div class="flex between center mb24"><span class="tag tag-volt">Recommended</span>
+          <div class="score"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+        <div class="wordmark" style="font-size:30px">Axon</div>
+        <p class="body mt24">The axon is the fibre that carries an electrical impulse away from a nerve
+          cell. It is the exact biological object this company has recreated in textile: a conductive
+          pathway carrying a body's own signal.</p>
+        <p class="body mt16">Four letters. Two syllables. Hard consonant open, soft close. Sits
+          naturally beside Oura, Whoop, Neuralink and Tesla. Extends to anything the company ever
+          builds — shorts, bras, suits, an OS, a clinic — because it names the <em>mechanism</em>,
+          not the garment.</p>
+        <div class="mt24"><div class="kv"><span class="k">Premium score</span><span class="v c-volt">9.5 / 10</span></div>
+          <div class="kv"><span class="k">Domain</span><span class="v">axon.com (acquire) · axon.co · getaxon.com</span></div>
+          <div class="kv"><span class="k">Conflict</span><span class="v">Axon Enterprise (law enforcement) — different class, coexistence viable</span></div>
+          <div class="kv"><span class="k">Migration</span><span class="v">Ship as VOLTWEAR, hold AXON for the Series C rebrand</span></div></div>
+      </div>
+    </div>
+
+    <div class="mb24 rv"><div class="h-md">Five stronger alternatives</div></div>
+    <div class="rv" id="nameTable"></div>
+
+    <p class="small mt40 rv">Premium score weights: phonetic hardness (20%), syllable economy (15%),
+      category headroom (25%), trademark viability (20%), and how it reads on a $1,290 aluminium case (20%).
+      <strong class="c-sil">Recommendation: build and launch as VOLTWEAR — it is the better
+      <em>product</em> name and pre-orders are already attached to it — while securing AXON as the
+      platform brand for the ecosystem expansion in 2027.</strong> The remainder of this system is
+      constructed so that swapping the wordmark does not break a single other asset.</p>
+  </div>
+</section>
+
+<!-- ===== LOGO ===== -->
+<section class="section" id="logo">
+  <div class="container">
+    <div class="eyebrow rv">02 · Logo architecture</div>
+    <h2 class="h-xl mb40 rv">The Arc.</h2>
+    <p class="lede mb64 rv rv-d1">One mark that reads simultaneously as a V, a neckline, a voltage
+      vector and a signal descending through the body. It is built on a 32-unit grid with a 3-unit
+      stroke, so it stays legible at 16 px on a tab and at 6 m on a trade-show wall.</p>
+
+    <div class="grid g4 mb40">
+      <div class="logo-cell rv"><span class="cap">Symbol mark</span>
+        <span data-logo="mark" data-size="82"></span></div>
+      <div class="logo-cell rv rv-d1"><span class="cap">Primary lockup</span>
+        <div class="flex center gap-12"><span data-logo="mark" data-size="38"></span>
+          <span class="wordmark" style="font-size:22px">Voltwear</span></div></div>
+      <div class="logo-cell rv rv-d2"><span class="cap">Stacked lockup</span>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+          <span data-logo="mark" data-size="46"></span>
+          <span class="wordmark" style="font-size:15px">Voltwear</span></div></div>
+      <div class="logo-cell rv rv-d3"><span class="cap">App icon</span>
+        <span data-logo="icon" data-size="96" data-radius="22"></span></div>
+    </div>
+
+    <div class="grid g4 mb64">
+      <div class="logo-cell rv" style="background:var(--platinum)"><span class="cap" style="color:#6b7280">On light</span>
+        <div class="flex center gap-12" style="color:#05070A"><span data-logo="mark" data-size="34" data-grad="false"></span>
+          <span class="wordmark" style="font-size:20px;color:#05070A">Voltwear</span></div></div>
+      <div class="logo-cell rv rv-d1" style="background:var(--volt)"><span class="cap" style="color:#3d4a10">On volt</span>
+        <div class="flex center gap-12" style="color:#0A0E13"><span data-logo="mark" data-size="34" data-grad="false"></span>
+          <span class="wordmark" style="font-size:20px;color:#0A0E13">Voltwear</span></div></div>
+      <div class="logo-cell rv rv-d2"><span class="cap">Monochrome</span>
+        <div class="flex center gap-12" style="color:var(--platinum)"><span data-logo="mark" data-size="34" data-grad="false"></span>
+          <span class="wordmark" style="font-size:20px">Voltwear</span></div></div>
+      <div class="logo-cell rv rv-d3"><span class="cap">Clear space · 1×</span>
+        <div style="position:relative;padding:26px;border:1px dashed rgba(200,255,60,.35);border-radius:12px">
+          <span data-logo="mark" data-size="52"></span></div></div>
+    </div>
+
+    <div class="mb24 rv"><div class="h-md">Explorations</div>
+      <p class="body mt16" style="max-width:60ch">Four directions were developed to production
+        standard. The Arc was selected because it is the only one that is legible at 16 px, embroiderable
+        in a single thread path, and readable as both a letterform and an idea.</p></div>
+    <div class="grid g4" id="explorations"></div>
+  </div>
+</section>
+
+<!-- ===== COLOUR ===== -->
+<section class="section section-alt" id="colour">
+  <div class="container">
+    <div class="eyebrow rv">03 · Colour</div>
+    <h2 class="h-xl mb40 rv">Near-black,<br>one live wire.</h2>
+    <p class="lede mb64 rv rv-d1">Ninety-two percent of every surface is a neutral in the obsidian ramp.
+      The remaining eight percent carries all the meaning. Volt is never decorative — it appears only
+      where something is alive, measured, or actionable.</p>
+
+    <div class="mb24 rv"><div class="micro">Core palette</div></div>
+    <div class="grid g5 mb40 rv" id="coreSwatches"></div>
+
+    <div class="mb24 rv"><div class="micro">Signal palette — semantic only</div></div>
+    <div class="grid g5 mb40 rv" id="sigSwatches"></div>
+
+    <div class="mb24 rv"><div class="micro">Neutral ramp</div></div>
+    <div class="grid g5 mb64 rv" id="neuSwatches"></div>
+
+    <div class="grid g3">
+      <div class="card rv"><div class="h-sm">Ratio discipline</div>
+        <div class="mt24" style="display:flex;height:12px;border-radius:99px;overflow:hidden">
+          <i style="width:74%;background:#05070A;border-right:1px solid var(--hairline);display:block"></i>
+          <i style="width:18%;background:#141A21;display:block"></i>
+          <i style="width:5%;background:#EEF2F7;display:block"></i>
+          <i style="width:3%;background:#C8FF3C;display:block"></i>
+        </div>
+        <div class="mt24"><div class="kv"><span class="k">Obsidian ground</span><span class="v">74%</span></div>
+          <div class="kv"><span class="k">Elevated surface</span><span class="v">18%</span></div>
+          <div class="kv"><span class="k">Platinum type</span><span class="v">5%</span></div>
+          <div class="kv"><span class="k">Volt accent</span><span class="v c-volt">3%</span></div></div></div>
+      <div class="card rv rv-d1"><div class="h-sm">Contrast floors</div>
+        <p class="small mt16">Every pairing in the system is tested at AA minimum; anything a user reads
+          while their heart rate is above 150 bpm is tested at AAA.</p>
+        <div class="mt24"><div class="kv"><span class="k">Platinum on Obsidian</span><span class="v c-volt">17.4 : 1</span></div>
+          <div class="kv"><span class="k">Silver on Obsidian</span><span class="v c-volt">11.1 : 1</span></div>
+          <div class="kv"><span class="k">Titanium on Obsidian</span><span class="v">5.6 : 1</span></div>
+          <div class="kv"><span class="k">Volt on Obsidian</span><span class="v c-volt">14.9 : 1</span></div>
+          <div class="kv"><span class="k">Obsidian on Volt</span><span class="v c-volt">14.9 : 1</span></div></div></div>
+      <div class="card rv rv-d2"><div class="h-sm">Colour in the physical world</div>
+        <p class="small mt16">The digital palette translates to four physical finishes and nothing else.</p>
+        <div class="mt24"><div class="kv"><span class="k">Garment · Obsidian</span><span class="v">Pantone Black 6 C</span></div>
+          <div class="kv"><span class="k">Garment · Fog</span><span class="v">Pantone Cool Gray 3 C</span></div>
+          <div class="kv"><span class="k">Trace · Volt</span><span class="v">Pantone 388 C</span></div>
+          <div class="kv"><span class="k">Hub · Titanium</span><span class="v">Anodised natural, bead-blast</span></div>
+          <div class="kv"><span class="k">Packaging</span><span class="v">Soft-touch black, Volt foil</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TYPE ===== -->
+<section class="section" id="type">
+  <div class="container">
+    <div class="eyebrow rv">04 · Typography</div>
+    <h2 class="h-xl mb40 rv">Three voices.<br>No exceptions.</h2>
+
+    <div class="grid g3 mb64">
+      <div class="card rv"><span class="tag tag-volt">Display</span>
+        <div style="font-family:var(--f-display);font-size:60px;font-weight:600;letter-spacing:-.04em;margin:22px 0 6px">Aa</div>
+        <div class="h-sm">Suisse Int'l Bold</div>
+        <div class="micro mt8">Fallback · Inter Tight 600</div>
+        <p class="small mt16">Every headline, every metric, every number on a garment tag. Tracked to
+          −4% at display sizes. Never lighter than 500. Never italic.</p>
+        <div class="mt24"><div class="kv"><span class="k">Licence</span><span class="v">Swiss Typefaces · web + desktop</span></div>
+          <div class="kv"><span class="k">Sizes</span><span class="v">34 – 148 px</span></div>
+          <div class="kv"><span class="k">Tracking</span><span class="v">−0.035 to −0.05 em</span></div></div></div>
+
+      <div class="card rv rv-d1"><span class="tag tag-arc">Body</span>
+        <div style="font-family:var(--f-body);font-size:60px;font-weight:400;letter-spacing:-.02em;margin:22px 0 6px">Aa</div>
+        <div class="h-sm">Inter</div>
+        <div class="micro mt8">Variable · 300–600</div>
+        <p class="small mt16">All running copy, product description, coaching text and legal.
+          Chosen because it is the most legible screen face at small optical sizes and is free to
+          licence across every surface the company will ever ship.</p>
+        <div class="mt24"><div class="kv"><span class="k">Licence</span><span class="v">SIL Open Font — free</span></div>
+          <div class="kv"><span class="k">Sizes</span><span class="v">12.5 – 21 px</span></div>
+          <div class="kv"><span class="k">Line height</span><span class="v">1.55 – 1.65</span></div></div></div>
+
+      <div class="card rv rv-d2"><span class="tag tag-violet">Data / UI</span>
+        <div style="font-family:var(--f-mono);font-size:60px;font-weight:500;letter-spacing:-.02em;margin:22px 0 6px">Aa</div>
+        <div class="h-sm">JetBrains Mono</div>
+        <div class="micro mt8">Tabular · 400–500</div>
+        <p class="small mt16">Labels, units, telemetry, serial numbers, calibration certificates.
+          Uppercase with 0.16 em tracking. Its job is to signal <em>instrument</em>, and it is never
+          used for anything a human would read as a sentence.</p>
+        <div class="mt24"><div class="kv"><span class="k">Licence</span><span class="v">Apache 2.0 — free</span></div>
+          <div class="kv"><span class="k">Sizes</span><span class="v">9 – 13 px</span></div>
+          <div class="kv"><span class="k">Tracking</span><span class="v">+0.12 to +0.24 em</span></div></div></div>
+    </div>
+
+    <div class="card rv" style="padding:44px">
+      <div class="micro mb24">Type scale in situ</div>
+      <div style="font-family:var(--f-display);font-size:clamp(38px,6vw,84px);font-weight:600;letter-spacing:-.048em;line-height:.95">The body has always been electric.</div>
+      <p class="lede mt24">Display 84 / 600 / −4.8% — used once per page, never twice.</p>
+      <p class="body mt16" style="max-width:66ch">Body 15.5 / 400 / 1.65 — the workhorse. Long-form
+        explanation, product copy, and anything a customer reads while deciding whether to spend $349.</p>
+      <div class="micro mt24">MONO 11 / 500 / +0.16EM — LABELS AND UNITS ONLY</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VOICE + APPLICATION ===== -->
+<section class="section section-alt" id="voice">
+  <div class="container">
+    <div class="grid g2 gap-40">
+      <div class="rv">
+        <div class="eyebrow">05 · Voice</div>
+        <h2 class="h-lg">Speak like the<br>instrument, not<br>the influencer.</h2>
+        <p class="body mt24">VOLTWEAR states facts and consequences. It never hypes, never uses an
+          exclamation mark, and never congratulates the user for existing. The tone that earns trust
+          from a cardiologist is the same tone that earns respect from an athlete.</p>
+        <div class="mt40">
+          <div class="kv"><span class="k">We say</span><span class="v">"Your left erector is 9% below baseline."</span></div>
+          <div class="kv"><span class="k">We never say</span><span class="v c-dim">"Crush your goals! 💪"</span></div>
+          <div class="kv"><span class="k">We say</span><span class="v">"Rest. The data says so."</span></div>
+          <div class="kv"><span class="k">We never say</span><span class="v c-dim">"You're on fire today!"</span></div>
+          <div class="kv"><span class="k">We say</span><span class="v">"FDA 510(k) pending."</span></div>
+          <div class="kv"><span class="k">We never say</span><span class="v c-dim">"Medical-grade!" (unqualified)</span></div>
+        </div>
+        <div class="mt40">
+          <div class="micro mb16">Five principles</div>
+          <ol style="display:grid;gap:12px">
+            <li class="body"><strong class="c-volt">1.</strong> Number first, adjective never.</li>
+            <li class="body"><strong class="c-volt">2.</strong> Every claim carries its evidence or its caveat.</li>
+            <li class="body"><strong class="c-volt">3.</strong> Prescribe, don't describe.</li>
+            <li class="body"><strong class="c-volt">4.</strong> Short sentences. Engineering cadence.</li>
+            <li class="body"><strong class="c-volt">5.</strong> Respect the body. It is not a machine to be hacked.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="rv rv-d1">
+        <div class="eyebrow">06 · Application</div>
+        <h2 class="h-lg">One mark,<br>eight surfaces.</h2>
+        <div class="grid g2 mt40" style="gap:14px">
+          <div class="logo-cell" style="min-height:170px"><span class="cap">Chest · 24 mm</span>
+            <div style="width:120px" data-shirt data-view="front" data-variant="elite" data-flow="false" data-sensors="false" data-traces="false"></div></div>
+          <div class="logo-cell" style="min-height:170px"><span class="cap">Woven hem tab</span>
+            <div style="background:#0A0E13;border:1px solid var(--hairline-2);border-radius:4px;padding:8px 12px;display:flex;align-items:center;gap:7px">
+              <span data-logo="mark" data-size="14" data-grad="false" style="color:#C8FF3C"></span>
+              <span class="wordmark" style="font-size:8px">Voltwear</span></div></div>
+          <div class="logo-cell" style="min-height:170px"><span class="cap">Hub engraving</span>
+            <div style="width:74px;height:48px;border-radius:14px;background:linear-gradient(145deg,#2b3440,#0b0f14);
+              border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center">
+              <span data-logo="mark" data-size="20" data-grad="false" style="color:rgba(255,255,255,.5)"></span></div></div>
+          <div class="logo-cell" style="min-height:170px"><span class="cap">Favicon · 16 px</span>
+            <div class="flex center gap-16"><span data-logo="icon" data-size="16" data-radius="4"></span>
+              <span data-logo="icon" data-size="32" data-radius="8"></span>
+              <span data-logo="icon" data-size="48" data-radius="11"></span></div></div>
+        </div>
+        <div class="mt40">
+          <div class="kv"><span class="k">Minimum size · digital</span><span class="v">16 px symbol / 84 px lockup</span></div>
+          <div class="kv"><span class="k">Minimum size · embroidery</span><span class="v">18 mm, single thread path</span></div>
+          <div class="kv"><span class="k">Clear space</span><span class="v">1× the symbol height, all sides</span></div>
+          <div class="kv"><span class="k">Never</span><span class="v">Rotate · outline · gradient the wordmark · place on photography without a scrim</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="flex between wrap gap-24">
+      <a class="nav-logo" href="index.html"><span data-logo="mark" data-size="26"></span><span class="wm">Voltwear</span></a>
+      <div class="flex gap-24 wrap"><a href="index.html">Home</a><a href="product.html">Product</a>
+        <a href="app.html">App</a><a href="marketing.html">Ecosystem</a><a href="docs/BRANDBOOK.md">Brand book</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-year></span> VOLTWEAR, Inc.</span><span>Brand system v1.0 · April 2026</span></div>
+  </div>
+</footer>
+
+<script src="assets/js/shirt.js?v=6"></script>
+<script>
+window.VWPage = function(){
+
+/* ---------- NAMING TABLE ---------- */
+var NAMES=[
+  {n:"AXON",   s:9.5, m:"The nerve fibre that carries an electrical impulse away from the cell body.",
+   r:"Names the mechanism, not the product. Four letters, hard opening consonant, no suffix to outgrow. Sits beside Oura and Neuralink without explanation. The single strongest option — it makes the technology sound inevitable rather than novel.",
+   t:"Coexistence needed with Axon Enterprise (Class 9, law enforcement). Clean in Class 25."},
+  {n:"VOLTA",  s:9.0, m:"Alessandro Volta, who built the first battery — and the origin of the word volt.",
+   r:"Keeps every equity already built into 'Volt' while shedding the '-wear' ceiling. The terminal A adds Italian warmth to a hard technical root, which is exactly the Ferrari/Prada trick. Easiest possible migration from the current name: same first four letters.",
+   t:"Moderate. Several small marks; acquirable in the relevant classes."},
+  {n:"KORE",   s:8.6, m:"The core — the trunk of the body, and the part of the athlete this product owns.",
+   r:"Direct, physical, and it stakes the exact territory the garment occupies: the torso. The K spelling makes it ownable and gives it a hard, engineered edge. Extends naturally to a family (Kore One, Kore Pro, Kore Clinic).",
+   t:"Moderate — 'Core' is descriptive, the K spelling is registrable."},
+  {n:"OHM",    s:8.8, m:"The unit of electrical resistance — and, read the other way, the sound of stillness.",
+   r:"A rare double meaning that spans both halves of the product: the electrical instrument and the recovery philosophy. Three letters. Impossible to mispronounce in any market. The most 'Oura-adjacent' option in feel.",
+   t:"Harder — short marks are contested. Consider OHM. or OHMLAB as filing strategy."},
+  {n:"MYOS",   s:8.2, m:"From myo-, the Greek prefix for muscle, as in myoelectric.",
+   r:"The most technically precise option: myoelectric signal is literally what the shirt reads. Clinical enough for the medical channel, short enough for consumer. Slightly colder than Axon and needs one line of explanation on first contact — which is the only reason it ranks fifth.",
+   t:"Clean in most classes; several dormant marks in supplements."}
+];
+document.getElementById('nameTable').innerHTML = NAMES.map(function(x,i){
+  var bars=''; for(var j=0;j<10;j++) bars+='<i class="'+(j<Math.round(x.s)?'on':'')+'"></i>';
+  return '<div class="name-row">'+
+    '<div><div class="wordmark" style="font-size:26px">'+x.n+'</div>'+
+    '<div class="micro mt8">0'+(i+1)+' · '+(i===0?'RECOMMENDED':'ALTERNATIVE')+'</div></div>'+
+    '<div><div class="small" style="color:var(--platinum);font-weight:500">'+x.m+'</div>'+
+    '<p class="small mt8">'+x.r+'</p></div>'+
+    '<div><div class="micro mb8">Trademark outlook</div><div class="small">'+x.t+'</div></div>'+
+    '<div><div class="micro mb8">Premium</div><div class="score">'+bars+'</div>'+
+    '<div class="h-sm mt8 num">'+x.s.toFixed(1)+'</div></div></div>';
+}).join('');
+
+/* ---------- LOGO EXPLORATIONS ---------- */
+var EXP=[
+  {t:"A · The Arc",  sel:true,
+   d:"V-torso carrying a signal bolt. Reads as letterform, neckline and voltage vector at once.",
+   svg:'<svg viewBox="0 0 32 32" width="86" height="86" fill="none">'+
+     '<defs><linearGradient id="e1" x1="2" y1="4" x2="30" y2="28" gradientUnits="userSpaceOnUse">'+
+     '<stop stop-color="#C8FF3C"/><stop offset=".55" stop-color="#3EE8B5"/><stop offset="1" stop-color="#2F80FF"/></linearGradient></defs>'+
+     '<path d="M4.6 4.8 L16 28.2 L27.4 4.8" stroke="url(#e1)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'+
+     '<path d="M19.4 9.6 L13.4 17.4 L17.2 17.4 L12.2 24.6" stroke="#EEF2F7" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>'},
+  {t:"B · The Weave",
+   d:"Two chevrons interlocking — fabric and circuit as the same gesture. Beautiful, but illegible below 24 px.",
+   svg:'<svg viewBox="0 0 32 32" width="86" height="86" fill="none" stroke-linecap="round" stroke-linejoin="round">'+
+     '<path d="M5 11 L16 4 L27 11 L16 18 Z" stroke="#C8FF3C" stroke-width="2.2"/>'+
+     '<path d="M5 21 L16 14 L27 21 L16 28 Z" stroke="#2F80FF" stroke-width="2.2"/></svg>'},
+  {t:"C · Pulse Core",
+   d:"A sealed module with a QRS complex passing through it. Too close to a dozen health apps already shipping.",
+   svg:'<svg viewBox="0 0 32 32" width="86" height="86" fill="none">'+
+     '<rect x="4" y="4" width="24" height="24" rx="8" stroke="#8B5CFF" stroke-width="2.2"/>'+
+     '<path d="M7 16 h4 l2.4 -6 l3.4 12 l2.6 -7 l1.6 1 h4" stroke="#C8FF3C" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'},
+  {t:"D · Meridian",
+   d:"The V rebuilt from discrete sensor nodes. Conceptually the most accurate — and the first thing to disappear when embroidered.",
+   svg:'<svg viewBox="0 0 32 32" width="86" height="86" fill="none">'+
+     '<g fill="#3EE8B5">'+[[5,5],[8.7,12.7],[12.4,20.4],[16,28],[19.6,20.4],[23.3,12.7],[27,5]]
+       .map(function(p,i){return '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="'+(i===3?3:2.1)+'"/>';}).join('')+'</g>'+
+     '<path d="M5 5 L16 28 L27 5" stroke="#3EE8B5" stroke-width=".8" opacity=".4"/></svg>'}
+];
+document.getElementById('explorations').innerHTML = EXP.map(function(e){
+  return '<div class="logo-cell rv in" style="min-height:270px;justify-content:flex-start;padding-top:56px;'+
+    (e.sel?'border-color:rgba(200,255,60,.4);background:linear-gradient(180deg,rgba(200,255,60,.07),transparent)':'')+'">'+
+    '<span class="cap">'+e.t+(e.sel?' · <span style="color:#C8FF3C">SELECTED</span>':'')+'</span>'+
+    e.svg+'<p class="small" style="text-align:center;margin-top:6px">'+e.d+'</p></div>';
+}).join('');
+
+/* ---------- SWATCHES ---------- */
+function sw(list,host){
+  document.getElementById(host).innerHTML = list.map(function(c){
+    return '<div class="swatch rv in"><div class="chip" style="background:'+c[1]+
+      (c[3]?';box-shadow:inset 0 0 0 1px var(--hairline)':'')+'"></div>'+
+      '<div class="meta"><div class="nm">'+c[0]+'</div><div class="hx">'+c[1].toUpperCase()+'</div>'+
+      '<div class="use">'+c[2]+'</div></div></div>';
+  }).join('');
+}
+sw([
+  ["Obsidian","#05070A","Page ground. The default state of everything.",1],
+  ["Platinum","#EEF2F7","Primary type. Never pure white — pure white glares at 5 a.m.",0],
+  ["Volt","#C8FF3C","The live wire. CTAs, energy, EMG, anything actionable.",0],
+  ["Arc Blue","#2F80FF","Data, cardiac trace, IMU, the technology voice.",0],
+  ["Violet","#8B5CFF","VOLT-1 intelligence. AI and prediction only.",0]
+],'coreSwatches');
+sw([
+  ["Mint","#3EE8B5","Recovery, in-range, positive delta.",0],
+  ["Amber","#FFB020","Caution, thermal, monitor state.",0],
+  ["Ember","#FF5A3C","Strain, overreach, elevated risk.",0],
+  ["Pulse","#FF3B5C","Cardiac signal. Reserved — never decorative.",0],
+  ["Fog","#B7C2D0","Secondary type on dark surfaces.",0]
+],'sigSwatches');
+sw([
+  ["Carbon","#0A0E13","Alternating section ground.",1],
+  ["Graphite","#111820","Cards, elevated surfaces.",1],
+  ["Slate","#161E28","Inputs, inactive controls.",1],
+  ["Steel","#1F2A36","Borders, dividers, hairlines.",1],
+  ["Titanium","#7C8A9C","Tertiary type, labels, units.",0]
+],'neuSwatches');
+};
+</script>
+<script src="assets/js/core.js?v=6"></script>
+</body>
+</html>

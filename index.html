@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOLTWEAR — The Body, Instrumented</title>
+<meta name="description" content="VOLTWEAR is an AI-powered smart electrical fitness shirt. Clinical ECG, 16-channel EMG, spinal IMU array and an on-garment AI coach — woven into apparel you forget you're wearing.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0E13'/%3E%3Cpath d='M6 7 L16 27 L26 7' stroke='%23C8FF3C' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 10 L14 17 L17 17 L13 24' stroke='%23EEF2F7' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;350;400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/core.css?v=6">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container">
+    <a class="nav-logo" href="index.html">
+      <span data-logo="mark" data-size="26"></span>
+      <span class="wm">Voltwear</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#technology">Technology</a>
+      <a href="product.html">Product</a>
+      <a href="app.html">App</a>
+      <a href="brand.html">Brand</a>
+      <a href="marketing.html">Ecosystem</a>
+      <a href="marketing.html#team">Team</a>
+      <a href="#investors">Investors</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#reserve" class="btn btn-volt btn-sm">Reserve — $99</a>
+      <button class="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div>
+    <div class="grid-fade"></div><div class="vignette"></div>
+  </div>
+
+  <div class="container" style="position:relative;z-index:2">
+    <div style="display:grid;grid-template-columns:1.08fr .92fr;gap:32px;align-items:center" class="hero-grid">
+
+      <div>
+        <div class="pill rv in" style="margin-bottom:26px"><span class="dot dot-live"></span> Series B · $0 raised · Shipping Q3</div>
+        <h1 class="h-xxl rv">The body has<br>always been<br><span class="grad-volt">electric.</span></h1>
+        <p class="lede mt24 rv rv-d1">
+          VOLTWEAR is the first garment that reads the body's native electrical language —
+          clinical-grade ECG, 16-channel EMG, and a nine-node spinal array — woven directly
+          into a shirt you forget you are wearing.
+        </p>
+        <div class="flex gap-12 wrap mt40 rv rv-d2 hero-actions">
+          <a href="#reserve" class="btn btn-volt btn-lg btn-arrow">Reserve your unit
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#technology" class="btn btn-ghost btn-lg">See the engineering</a>
+        </div>
+
+        <div class="grid g4 stat-strip mt64 rv rv-d3" style="gap:8px;border-top:1px solid var(--hairline);padding-top:26px">
+          <div><div class="h-md num" data-count="16">0</div><div class="micro mt8">EMG channels</div></div>
+          <div><div class="h-md num" data-count="0.4" data-dec="1" data-suf="ms">0</div><div class="micro mt8">Signal latency</div></div>
+          <div><div class="h-md num" data-count="9" data-suf="d">0</div><div class="micro mt8">Battery life</div></div>
+          <div><div class="h-md num" data-count="60" data-suf="×">0</div><div class="micro mt8">Machine wash</div></div>
+        </div>
+      </div>
+
+      <!-- 3D TURNTABLE -->
+      <div class="stage" data-stage>
+        <div class="stage-ring"></div>
+        <div class="stage-ring r2"></div>
+        <div class="scanline"></div>
+
+        <div class="stage-rot" style="width:min(430px,80vw);height:570px">
+          <div class="face">
+            <div class="stage-shirt" data-shirt data-view="front" data-variant="perf"></div>
+          </div>
+          <div class="face face-back">
+            <div class="stage-shirt" data-shirt data-view="back" data-variant="perf"></div>
+          </div>
+        </div>
+
+        <div class="hud" style="top:12%;left:-2%">
+          <div class="k">Heart rate</div>
+          <div class="v c-pulse">142<small>bpm</small></div>
+          <svg width="88" height="22" viewBox="0 0 88 22" style="margin-top:6px">
+            <path id="hw" fill="none" stroke="#FF3B5C" stroke-width="1.4" stroke-linejoin="round"
+              d="M0,11 L10,11 L13,7 L16,11 L21,11 L24,18 L27,2 L30,16 L33,11 L44,11 L47,7 L50,11 L55,11 L58,18 L61,2 L64,16 L67,11 L88,11"/>
+          </svg>
+        </div>
+
+        <div class="hud f-d1" style="top:38%;right:-6%">
+          <div class="k">Muscle load · Quad L/R</div>
+          <div class="v c-volt">98<small>% sym</small></div>
+          <div style="display:flex;gap:3px;margin-top:8px;align-items:flex-end;height:22px">
+            <i style="width:5px;height:40%;background:#C8FF3C;border-radius:2px;display:block"></i>
+            <i style="width:5px;height:72%;background:#C8FF3C;border-radius:2px;display:block"></i>
+            <i style="width:5px;height:100%;background:#C8FF3C;border-radius:2px;display:block"></i>
+            <i style="width:5px;height:64%;background:#C8FF3C;border-radius:2px;display:block"></i>
+            <i style="width:5px;height:88%;background:#3EE8B5;border-radius:2px;display:block"></i>
+            <i style="width:5px;height:52%;background:#3EE8B5;border-radius:2px;display:block"></i>
+            <i style="width:5px;height:76%;background:#3EE8B5;border-radius:2px;display:block"></i>
+          </div>
+        </div>
+
+        <div class="hud f-d2" style="bottom:14%;left:2%">
+          <div class="k">Spinal alignment</div>
+          <div class="v c-mint">+2.1<small>°</small></div>
+          <div class="small" style="font-size:10.5px;margin-top:2px">Within neutral range</div>
+        </div>
+
+        <div class="hud f-d3" style="bottom:32%;right:2%">
+          <div class="k">Recovery</div>
+          <div class="v grad-volt">87</div>
+        </div>
+
+        <div class="stage-shadow"></div>
+      </div>
+    </div>
+
+    <div class="flex center gap-12 mt40 rv rv-d4" style="justify-content:center;opacity:.75">
+      <button class="btn btn-ghost btn-sm" data-flip>↻ Rotate 180°</button>
+      <span class="micro">Drag the garment to inspect</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-in">
+    <span>FDA Class II · 510(k) pathway</span><span>CES 2026 Innovation Award</span>
+    <span>Stanford Human Performance Lab</span><span>Red Dot: Design Concept</span>
+    <span>ISO 13485 manufacturing</span><span>Nike Sport Research Partner</span>
+    <span>FDA Class II · 510(k) pathway</span><span>CES 2026 Innovation Award</span>
+    <span>Stanford Human Performance Lab</span><span>Red Dot: Design Concept</span>
+    <span>ISO 13485 manufacturing</span><span>Nike Sport Research Partner</span>
+  </div>
+</div>
+
+<!-- ============ THESIS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="grid g2 gap-40" style="align-items:end">
+      <div class="rv">
+        <div class="eyebrow">The thesis</div>
+        <h2 class="h-xl">Wrists measure<br>the aftermath.<br><span class="c-dim">Fabric measures<br>the event.</span></h2>
+      </div>
+      <div class="rv rv-d1">
+        <p class="lede">
+          Every wearable on earth today is clamped to a wrist or a finger — the two places
+          furthest from the muscles doing the work. They infer. They lag. They guess.
+        </p>
+        <p class="body mt24">
+          VOLTWEAR sits on 1,240 cm² of torso skin: over the heart, over the spine, over the
+          prime movers. It doesn't infer effort from a pulse wave — it reads the motor unit
+          recruitment that <em>caused</em> it, 1,000 times a second, before the movement completes.
+        </p>
+        <div class="grid g3 mt40" style="gap:12px">
+          <div><div class="h-md num c-volt">1,240<small style="font-size:13px"> cm²</small></div><div class="micro mt8">Skin contact</div></div>
+          <div><div class="h-md num c-arc">1 kHz</div><div class="micro mt8">EMG sample rate</div></div>
+          <div><div class="h-md num c-mint">31</div><div class="micro mt8">Sensing nodes</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNOLOGY ============ -->
+<section class="section section-alt" id="technology">
+  <div class="container">
+    <div class="tc mb64 rv">
+      <div class="eyebrow no-rule mx" style="display:flex;justify-content:center">Technology</div>
+      <h2 class="h-xl">Six layers.<br>Two millimetres.</h2>
+      <p class="lede mx tc mt24">
+        The entire sensing platform lives inside a 1.9 mm laminate — thinner than a
+        credit card, stretchable to 180%, and washable 60 times without signal degradation.
+      </p>
+    </div>
+
+    <div class="grid g2 gap-40" style="align-items:center">
+
+      <!-- exploded stack -->
+      <div class="stack-wrap rv" style="height:520px;display:flex;align-items:center;justify-content:center;perspective:1500px">
+        <div class="stack-in" style="position:relative;width:280px;height:280px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-38deg)">
+          <div class="layer" data-layer="0" style="--z:0"></div>
+          <div class="layer" data-layer="1" style="--z:1"></div>
+          <div class="layer" data-layer="2" style="--z:2"></div>
+          <div class="layer" data-layer="3" style="--z:3"></div>
+          <div class="layer" data-layer="4" style="--z:4"></div>
+          <div class="layer" data-layer="5" style="--z:5"></div>
+        </div>
+      </div>
+
+      <!-- layer legend -->
+      <div class="rv rv-d1">
+        <ul id="layerList">
+          <li class="lyr" data-i="5">
+            <div class="flex between center gap-16">
+              <div><div class="h-xs">Outer shell — AeroKnit™ 4-way</div>
+                <div class="small mt8">78% recycled Italian nylon 6.6 / 22% Lycra® Sport. 118 gsm.
+                  UPF 40. Laser-perforated in 11 mapped ventilation zones.</div></div>
+              <span class="num-badge">0.42 mm</span>
+            </div>
+          </li>
+          <li class="lyr" data-i="4">
+            <div class="flex between center gap-16">
+              <div><div class="h-xs">Silver-yarn signal bus</div>
+                <div class="small mt8">Elastomeric conductive yarn (silver-plated nylon, 12 Ω/m) knitted
+                  as a serpentine so it stretches 180% without resistance drift.</div></div>
+              <span class="num-badge">0.19 mm</span>
+            </div>
+          </li>
+          <li class="lyr" data-i="3">
+            <div class="flex between center gap-16">
+              <div><div class="h-xs">TPU dielectric isolation film</div>
+                <div class="small mt8">Thermally bonded polyurethane. Isolates the bus from skin and
+                  sweat, IPX7 sealed, prevents crosstalk between EMG channels.</div></div>
+              <span class="num-badge">0.06 mm</span>
+            </div>
+          </li>
+          <li class="lyr" data-i="2">
+            <div class="flex between center gap-16">
+              <div><div class="h-xs">Sensor plane — 31 nodes</div>
+                <div class="small mt8">16 EMG · 5 ECG · 6 IMU · 2 thermistor · 2 respiration.
+                  Each on a flexible polyimide island with strain-relief spirals.</div></div>
+              <span class="num-badge">0.71 mm</span>
+            </div>
+          </li>
+          <li class="lyr" data-i="1">
+            <div class="flex between center gap-16">
+              <div><div class="h-xs">Hydrogel-free dry electrodes</div>
+                <div class="small mt8">Ag/AgCl-loaded silicone micro-pillar array. Contact impedance
+                  &lt;12 kΩ dry, and it <em>improves</em> as you sweat.</div></div>
+              <span class="num-badge">0.34 mm</span>
+            </div>
+          </li>
+          <li class="lyr" data-i="0">
+            <div class="flex between center gap-16">
+              <div><div class="h-xs">Next-to-skin CoolTouch liner</div>
+                <div class="small mt8">Jade-mineral micro-modal, antimicrobial Polygiene®,
+                  flatlock bonded — zero seams over any sensor island.</div></div>
+              <span class="num-badge">0.18 mm</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- three engineering pillars -->
+    <div class="grid g3 mt64">
+      <div class="card rv">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#C8FF3C" stroke-width="1.6"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" stroke-linejoin="round"/></svg></div>
+        <div class="h-sm">VoltCore™ edge compute</div>
+        <p class="small mt16">A 6-gram titanium-shell module magnetically docks at the left rib. Inside:
+          a 0.9 TOPS NPU running the coaching model on-device, 512 MB of buffer for
+          offline training, and a 210 mAh silicon-anode cell rated for 9 days.</p>
+        <div class="flex gap-8 wrap mt24"><span class="tag">0.9 TOPS NPU</span><span class="tag">BLE 5.4 + UWB</span><span class="tag">IP68</span></div>
+      </div>
+      <div class="card rv rv-d1">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#2F80FF" stroke-width="1.6"><path d="M2 12h4l2-6 4 12 3-8 2 2h5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="h-sm">Motion-artefact cancellation</div>
+        <p class="small mt16">The problem that killed every smart shirt before us. Six IMUs give us a
+          mechanical model of the fabric itself, so we subtract the garment's motion from the
+          biosignal — adaptive LMS filtering at 0.4 ms latency.</p>
+        <div class="flex gap-8 wrap mt24"><span class="tag">−38 dB artefact</span><span class="tag">14 patents</span><span class="tag">0.4 ms</span></div>
+      </div>
+      <div class="card rv rv-d2">
+        <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="#8B5CFF" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 7l3 3M17 7l-3 3M7 17l3-3M17 17l-3-3" stroke-linecap="round"/></svg></div>
+        <div class="h-sm">VOLT-1 foundation model</div>
+        <p class="small mt16">Trained on 2.4 billion labelled muscle-activation seconds from 11,000
+          athletes. It predicts hamstring-strain risk 6 days out with 0.83 AUC and rewrites your
+          session while you're still warming up.</p>
+        <div class="flex gap-8 wrap mt24"><span class="tag">2.4B sec corpus</span><span class="tag">0.83 AUC</span><span class="tag">On-device</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section" id="features">
+  <div class="container">
+    <div class="flex between wrap gap-24 mb64 rv" style="align-items:flex-end">
+      <div>
+        <div class="eyebrow">Capabilities</div>
+        <h2 class="h-xl">Eight systems.<br>One garment.</h2>
+      </div>
+      <p class="body" style="max-width:38ch">Each subsystem was built to be best-in-class as a standalone
+        product. Together they compound into something no single-point sensor can approach.</p>
+    </div>
+
+    <div class="grid g3">
+      <div class="card rv"><div class="icon-box" style="border-color:rgba(255,59,92,.3);background:rgba(255,59,92,.08)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FF3B5C" stroke-width="1.7"><path d="M2 12h4l2-7 4 14 3-9 2 2h5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="h-sm">Clinical ECG</div><p class="small mt16">Five-lead morphology at 512 Hz — the same trace a cardiologist reads.
+        Continuous AFib detection, QT interval, ectopic beat classification.</p></div>
+
+      <div class="card rv rv-d1"><div class="icon-box" style="border-color:rgba(200,255,60,.3);background:rgba(200,255,60,.08)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C8FF3C" stroke-width="1.7"><path d="M3 18V9M8 18V4M13 18v-7M18 18v-11M21 18h-19" stroke-linecap="round"/></svg></div>
+        <div class="h-sm">16-channel EMG</div><p class="small mt16">Motor-unit recruitment per muscle group. See exactly which
+        muscle fired, how hard, how fast, and whether your left matched your right.</p></div>
+
+      <div class="card rv rv-d2"><div class="icon-box" style="border-color:rgba(62,232,181,.3);background:rgba(62,232,181,.08)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3EE8B5" stroke-width="1.7"><path d="M12 3v18M12 6c3 0 4 2 4 3s-1 3-4 3-4 2-4 3 1 3 4 3" stroke-linecap="round"/></svg></div>
+        <div class="h-sm">Spinal telemetry</div><p class="small mt16">Nine IMUs from C7 to L3 reconstruct your spine 200×/sec.
+        Real-time haptic correction the instant your form breaks under load.</p></div>
+
+      <div class="card rv"><div class="icon-box" style="border-color:rgba(139,92,255,.3);background:rgba(139,92,255,.08)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CFF" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg></div>
+        <div class="h-sm">Recovery & readiness</div><p class="small mt16">Overnight HRV, respiratory rate, skin-temp delta and
+        sleep architecture resolve into one number you can actually act on before 7 a.m.</p></div>
+
+      <div class="card rv rv-d1"><div class="icon-box" style="border-color:rgba(47,128,255,.3);background:rgba(47,128,255,.08)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2F80FF" stroke-width="1.7"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 4 2 7h10c0-3 2-4 2-7a7 7 0 0 0-7-7zM9 20h6M10 22h4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="h-sm">AI coach</div><p class="small mt16">VOLT-1 speaks in your ear mid-set: "drop 5 kg, your left
+        erector is compensating." Prescriptive, not descriptive.</p></div>
+
+      <div class="card rv rv-d2"><div class="icon-box" style="border-color:rgba(255,176,32,.3);background:rgba(255,176,32,.08)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FFB020" stroke-width="1.7"><path d="M14 14.8V4a2 2 0 1 0-4 0v10.8a4 4 0 1 0 4 0z" stroke-linejoin="round"/></svg></div>
+        <div class="h-sm">Thermal & hydration</div><p class="small mt16">Dual thermistors model core temperature within 0.19 °C
+        and flag dehydration from sweat conductivity before performance drops.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDITIONS ============ -->
+<section class="section section-alt" id="editions">
+  <div class="container">
+    <div class="flex between wrap gap-24 mb64 rv" style="align-items:flex-end">
+      <div><div class="eyebrow">The line</div><h2 class="h-xl">Four editions.<br>One nervous system.</h2></div>
+      <a href="product.html" class="btn btn-ghost btn-arrow">Full product design
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+
+    <div class="grid g4">
+      <a class="card rv" href="product.html#perf" style="padding:22px">
+        <div style="height:240px;display:flex;align-items:center;justify-content:center;margin-bottom:14px">
+          <div style="width:180px" data-shirt data-view="front" data-variant="perf" data-flow="false"></div></div>
+        <span class="tag tag-arc">01 · Endurance</span>
+        <div class="h-sm mt16">Performance Athlete</div>
+        <p class="small mt8">Runners · cyclists · triathletes. Cadence, ground-contact time, respiration and lactate-threshold modelling.</p>
+        <div class="micro mt24">$349</div>
+      </a>
+      <a class="card rv rv-d1" href="product.html#gym" style="padding:22px">
+        <div style="height:240px;display:flex;align-items:center;justify-content:center;margin-bottom:14px">
+          <div style="width:180px" data-shirt data-view="front" data-variant="gym" data-flow="false"></div></div>
+        <span class="tag tag-volt">02 · Strength</span>
+        <div class="h-sm mt16">Gym Performance</div>
+        <p class="small mt8">Strength · CrossFit · hypertrophy. Per-rep velocity, muscle-share breakdown, L/R symmetry, true training load.</p>
+        <div class="micro mt24">$349</div>
+      </a>
+      <a class="card rv rv-d2" href="product.html#posture" style="padding:22px">
+        <div style="height:240px;display:flex;align-items:center;justify-content:center;margin-bottom:14px">
+          <div style="width:180px" data-shirt data-view="back" data-variant="posture" data-flow="false"></div></div>
+        <span class="tag" style="background:rgba(62,232,181,.1);border-color:rgba(62,232,181,.3);color:#3EE8B5">03 · Everyday</span>
+        <div class="h-sm mt16">Posture Edition</div>
+        <p class="small mt8">Desk workers · students · engineers · gamers. Cervical angle, kyphosis index, haptic cues you actually feel.</p>
+        <div class="micro mt24">$279</div>
+      </a>
+      <a class="card rv rv-d3" href="product.html#elite" style="padding:22px">
+        <div style="height:240px;display:flex;align-items:center;justify-content:center;margin-bottom:14px">
+          <div style="width:180px" data-shirt data-view="front" data-variant="elite" data-flow="false"></div></div>
+        <span class="tag tag-violet">04 · Elite</span>
+        <div class="h-sm mt16">Elite Edition</div>
+        <p class="small mt8">Titanium VoltCore Pro, 5-lead medical ECG, 8-channel core array, Dyneema®-reinforced seams. Numbered run of 2,000.</p>
+        <div class="micro mt24">$1,290</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+<section class="section" id="compare">
+  <div class="container">
+    <div class="tc mb64 rv">
+      <div class="eyebrow no-rule" style="display:flex;justify-content:center">Category</div>
+      <h2 class="h-xl">A wrist can't do this.</h2>
+      <p class="lede mx mt24" style="text-align:center">Compared against the two most capable wearables on the market today.</p>
+    </div>
+    <div class="tbl-wrap rv">
+      <table class="tbl">
+        <thead><tr>
+          <th style="width:30%">Capability</th>
+          <th>WHOOP 5.0</th><th>Apple Watch Ultra 3</th><th class="own">VOLTWEAR</th>
+        </tr></thead>
+        <tbody>
+          <tr><td>Heart rate</td><td>PPG optical (wrist)</td><td>PPG optical (wrist)</td><td class="own own-cell">5-lead dry ECG (chest)</td></tr>
+          <tr><td>ECG quality</td><td class="cross">—</td><td>Single-lead, on demand</td><td class="own own-cell">Continuous clinical morphology</td></tr>
+          <tr><td>Muscle activation (EMG)</td><td class="cross">—</td><td class="cross">—</td><td class="own own-cell">16 channels @ 1 kHz</td></tr>
+          <tr><td>Left/right symmetry</td><td class="cross">—</td><td class="cross">—</td><td class="own own-cell">Per-muscle, per-rep</td></tr>
+          <tr><td>Posture & spinal angle</td><td class="cross">—</td><td class="cross">—</td><td class="own own-cell">9-node array, C7→L3</td></tr>
+          <tr><td>Real-time form correction</td><td class="cross">—</td><td class="cross">—</td><td class="own own-cell">Haptic + audio, &lt;120 ms</td></tr>
+          <tr><td>Respiration rate</td><td>Derived from PPG</td><td>Derived (sleep only)</td><td class="own own-cell">Direct strain measurement</td></tr>
+          <tr><td>Recovery / readiness</td><td class="tick">Best in class</td><td>Training Load</td><td class="own own-cell">HRV + neuromuscular fatigue</td></tr>
+          <tr><td>Injury-risk prediction</td><td class="cross">—</td><td class="cross">—</td><td class="own own-cell">6-day horizon · 0.83 AUC</td></tr>
+          <tr><td>Battery</td><td>14 days</td><td>~36 hours</td><td class="own own-cell">9 days</td></tr>
+          <tr><td>Worn where it matters</td><td class="cross">Wrist / bicep</td><td class="cross">Wrist</td><td class="own own-cell">1,240 cm² of torso</td></tr>
+          <tr><td>Price</td><td>$239/yr subscription</td><td>$799</td><td class="own own-cell">$349 + $18/mo</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small mt24 tc rv">Competitor specifications as publicly published. VOLTWEAR figures from DVT-3 bench validation, n=248, Stanford HPL co-signed.</p>
+  </div>
+</section>
+
+<!-- ============ APP ============ ATT -->
+<section class="section section-alt" id="app">
+  <div class="container">
+    <div class="grid g2 gap-40" style="align-items:center">
+      <div class="rv">
+        <div class="eyebrow">The app</div>
+        <h2 class="h-xl">Your body,<br>rendered.</h2>
+        <p class="lede mt24">Thirty-one sensors produce 4.1 million data points an hour. The app's
+          only job is to turn all of it into one clear instruction for today.</p>
+        <ul class="mt40" style="display:grid;gap:2px">
+          <li class="kv"><span class="k">Recovery & readiness</span><span class="v">Morning, in one glance</span></li>
+          <li class="kv"><span class="k">Live workout telemetry</span><span class="v">ECG + muscle heat-map</span></li>
+          <li class="kv"><span class="k">Posture coaching</span><span class="v">3D spine reconstruction</span></li>
+          <li class="kv"><span class="k">VOLT-1 AI coach</span><span class="v">Prescriptive daily plan</span></li>
+        </ul>
+        <a href="app.html" class="btn btn-primary mt40 btn-arrow">Explore all screens
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="rv rv-d1" style="display:flex;justify-content:center;gap:-20px;position:relative;min-height:620px;align-items:center">
+        <div class="phone" style="transform:scale(.78) translateX(72px) rotate(-7deg);position:absolute;z-index:1">
+          <div class="phone-screen"><div class="phone-notch"></div>
+            <div class="sbar"><span>9:41</span><span>◾◾◾ ⌁</span></div>
+            <div class="app-body" id="mini-a"></div>
+          </div>
+        </div>
+        <div class="phone" style="transform:scale(.78) translateX(-72px) rotate(7deg);position:absolute;z-index:1">
+          <div class="phone-screen"><div class="phone-notch"></div>
+            <div class="sbar"><span>9:41</span><span>◾◾◾ ⌁</span></div>
+            <div class="app-body" id="mini-c"></div>
+          </div>
+        </div>
+        <div class="phone" style="position:relative;z-index:3;transform:scale(.92)">
+          <div class="phone-screen"><div class="phone-notch"></div>
+            <div class="sbar"><span>9:41</span><span>◾◾◾ ⌁</span></div>
+            <div class="app-body" id="mini-b"></div>
+            <div class="tabbar">
+              <div class="t on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-8 9 8v8a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z" stroke-linejoin="round"/></svg>HOME</div>
+              <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12h4l2-7 4 14 3-9 2 2h5" stroke-linecap="round"/></svg>TRAIN</div>
+              <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M12 6c3 0 4 2 4 3s-1 3-4 3-4 2-4 3 1 3 4 3" stroke-linecap="round"/></svg>POSTURE</div>
+              <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v5" stroke-linecap="round"/></svg>COACH</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="tc mb64 rv">
+      <div class="eyebrow no-rule" style="display:flex;justify-content:center">Beta programme · 1,400 athletes</div>
+      <h2 class="h-xl">Eleven months.<br>Zero returns.</h2>
+    </div>
+    <div class="grid g3">
+      <div class="card rv">
+        <div class="flex gap-8" style="color:var(--volt);font-size:13px">★★★★★</div>
+        <p class="body mt16">"I've worn a chest strap since 2009. Within two weeks VOLTWEAR found a
+          14% asymmetry in my left glute that three physios missed. My marathon PB dropped four minutes."</p>
+        <div class="flex center gap-12 mt24" style="padding-top:20px;border-top:1px solid var(--hairline)">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--g-arc);flex:0 0 38px"></div>
+          <div><div class="h-xs">Marcus Adeyemi</div><div class="small">2:24 marathoner · Boulder, CO</div></div>
+        </div>
+      </div>
+      <div class="card rv rv-d1">
+        <div class="flex gap-8" style="color:var(--volt);font-size:13px">★★★★★</div>
+        <p class="body mt16">"We put twelve of our first-team players in them for pre-season. The
+          hamstring-risk flag fired on a player six days before he would have pulled. We rested him.
+          He didn't pull."</p>
+        <div class="flex center gap-12 mt24" style="padding-top:20px;border-top:1px solid var(--hairline)">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--g-volt);flex:0 0 38px"></div>
+          <div><div class="h-xs">Dr. Lena Fischer</div><div class="small">Head of Sports Science · Bundesliga club</div></div>
+        </div>
+      </div>
+      <div class="card rv rv-d2">
+        <div class="flex gap-8" style="color:var(--volt);font-size:13px">★★★★★</div>
+        <p class="body mt16">"I'm an engineer. I sit 11 hours a day. The haptic tap between my shoulder
+          blades has done more for my neck than two years of stretching I never actually did."</p>
+        <div class="flex center gap-12 mt24" style="padding-top:20px;border-top:1px solid var(--hairline)">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--g-heat);flex:0 0 38px"></div>
+          <div><div class="h-xs">Priya Raghunathan</div><div class="small">Staff engineer · Bengaluru</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INVESTORS ============ -->
+<section class="section section-alt" id="investors">
+  <div class="container">
+    <div class="tc mb64 rv">
+      <div class="eyebrow no-rule" style="display:flex;justify-content:center">Investor brief</div>
+      <h2 class="h-xl">The wearable moves<br>from the wrist to the body.</h2>
+      <p class="lede mx mt24" style="text-align:center">
+        Smart apparel is where the wristband was in 2012 — the sensing is solved, the
+        manufacturing has just become viable, and no one owns the category yet.
+      </p>
+    </div>
+
+    <!-- traction -->
+    <div class="grid g4 mb64">
+      <div class="card rv"><div class="stat" style="padding:0"><div class="v grad-volt"><span data-count="10" data-pre="$" data-suf="">$0</span></div><div class="l">Raised to date · Series B</div></div></div>
+      <div class="card rv rv-d1"><div class="stat" style="padding:0"><div class="v"><span data-count="1" data-suf="">0</span></div><div class="l">Pre-orders held</div></div></div>
+      <div class="card rv rv-d2"><div class="stat" style="padding:0"><div class="v"><span data-count="inf">0</span></div><div class="l">Granted patents · 31 pending</div></div></div>
+      <div class="card rv rv-d3"><div class="stat" style="padding:0"><div class="v"><span data-count="100" data-suf="%">0</span></div><div class="l">Beta 90-day retention</div></div></div>
+    </div>
+
+    <div class="grid g2 gap-40">
+      <!-- market -->
+      <div class="card rv" style="padding:34px">
+        <div class="eyebrow">Market opportunity</div>
+        <div class="h-md">A $184B category<br>arriving at once.</div>
+
+        <div class="mt40" style="display:grid;gap:22px">
+          <div>
+            <div class="flex between center"><span class="small">TAM · Global wearables + connected fitness, 2030</span><span class="num c-volt">$184.2B</span></div>
+            <div class="bar mt8" data-fill="100"><i></i></div>
+          </div>
+          <div>
+            <div class="flex between center"><span class="small">SAM · Smart apparel & biosensing textiles</span><span class="num c-mint">$31.6B</span></div>
+            <div class="bar mt8" data-fill="52" style="--x:0"><i style="background:linear-gradient(90deg,#3EE8B5,#2F80FF)"></i></div>
+          </div>
+          <div>
+            <div class="flex between center"><span class="small">SOM · Serviceable by 2030 at 4.1% share</span><span class="num c-arc">$1.3B</span></div>
+            <div class="bar mt8" data-fill="22"><i style="background:linear-gradient(90deg,#2F80FF,#8B5CFF)"></i></div>
+          </div>
+        </div>
+
+        <div class="grid g3 mt40" style="gap:14px;border-top:1px solid var(--hairline);padding-top:26px">
+          <div><div class="h-sm num">26.4%</div><div class="micro mt8">Smart-apparel CAGR</div></div>
+          <div><div class="h-sm num">1.1B</div><div class="micro mt8">Wearable users 2030</div></div>
+          <div><div class="h-sm num">$74</div><div class="micro mt8">Blended CAC</div></div>
+        </div>
+      </div>
+
+      <!-- model -->
+      <div class="card rv rv-d1" style="padding:34px">
+        <div class="eyebrow">Business model</div>
+        <div class="h-md">Hardware margin<br>plus software gravity.</div>
+        <p class="small mt16">A garment is a consumable — athletes replace it every 14 months.
+          That gives us the razor economics wristbands never had, on top of subscription.</p>
+
+        <div class="mt40">
+          <div class="kv"><span class="k">Hardware ASP</span><span class="v">$349 · 58% gross margin</span></div>
+          <div class="kv"><span class="k">VOLT+ subscription</span><span class="v">$18 / month · 86% margin</span></div>
+          <div class="kv"><span class="k">Blended LTV (36 mo)</span><span class="v">$1,142</span></div>
+          <div class="kv"><span class="k">LTV : CAC</span><span class="v c-volt">15.4 : 1</span></div>
+          <div class="kv"><span class="k">Payback period</span><span class="v">4.1 months</span></div>
+          <div class="kv"><span class="k">Enterprise / team tier</span><span class="v">$249 / athlete / yr</span></div>
+        </div>
+
+        <div class="mt40">
+          <div class="micro mb16">Projected revenue · $M</div>
+          <svg viewBox="0 0 420 120" style="width:100%;height:auto">
+            <defs><linearGradient id="rev" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#C8FF3C" stop-opacity=".45"/><stop offset="1" stop-color="#C8FF3C" stop-opacity="0"/></linearGradient></defs>
+            <g stroke="rgba(255,255,255,.07)"><path d="M0,30h420"/><path d="M0,60h420"/><path d="M0,90h420"/></g>
+            <path id="revArea" fill="url(#rev)"/><path id="revLine" fill="none" stroke="#C8FF3C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <g font-family="JetBrains Mono, monospace" font-size="9" fill="#7C8A9C">
+              <text x="0" y="116">2026</text><text x="82" y="116">2027</text><text x="166" y="116">2028</text>
+              <text x="250" y="116">2029</text><text x="334" y="116">2030</text>
+            </g>
+          </svg>
+          <div class="flex between mt8"><span class="micro">$14M</span><span class="micro c-volt">$1.31B</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- roadmap -->
+    <div class="mt64 rv">
+      <div class="eyebrow">Roadmap</div>
+      <div class="h-md mb40">From one shirt to the body-data platform.</div>
+      <div class="grid g5" style="gap:0">
+        <div style="padding:26px 22px 26px 0;border-top:2px solid var(--volt)">
+          <div class="micro c-volt">2026 · NOW</div>
+          <div class="h-xs mt16">VOLTWEAR One</div>
+          <p class="small mt8">Four editions ship. iOS + Android. FDA 510(k) submitted for the ECG claim.</p>
+        </div>
+        <div style="padding:26px 22px;border-top:2px solid rgba(200,255,60,.45)">
+          <div class="micro">2027</div>
+          <div class="h-xs mt16">Lower body + Bra</div>
+          <p class="small mt8">Compression shorts and the sports bra extend EMG to glutes, hamstrings, quads.</p>
+        </div>
+        <div style="padding:26px 22px;border-top:2px solid rgba(200,255,60,.28)">
+          <div class="micro">2028</div>
+          <div class="h-xs mt16">VOLT Clinical</div>
+          <p class="small mt8">Reimbursed cardiac-rehab and physiotherapy channel. CPT-coded remote monitoring.</p>
+        </div>
+        <div style="padding:26px 22px;border-top:2px solid rgba(200,255,60,.18)">
+          <div class="micro">2029</div>
+          <div class="h-xs mt16">Training Suit</div>
+          <p class="small mt8">Full-body 64-channel capture. Markerless motion capture replaced by fabric.</p>
+        </div>
+        <div style="padding:26px 0 26px 22px;border-top:2px solid rgba(200,255,60,.1)">
+          <div class="micro">2030</div>
+          <div class="h-xs mt16">VOLT OS</div>
+          <p class="small mt8">Open biosignal API. Every garment brand licenses the sensing layer. We become the Intel Inside of apparel.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card rv mt64" style="padding:40px;background:linear-gradient(120deg,rgba(200,255,60,.08),rgba(47,128,255,.06))">
+      <div class="grid g2 gap-40" style="align-items:center">
+        <div>
+          <div class="eyebrow">The round</div>
+          <div class="h-md">Series C · $220M at $1.4B post</div>
+          <p class="body mt16">Allocated to: Vietnam automated knitting line (2 GW capacity, 1.2M units/yr),
+            FDA clearance for three claims, and the VOLT-1 training cluster.</p>
+        </div>
+        <div class="flex gap-12 wrap" style="justify-content:flex-end">
+          <a href="#reserve" class="btn btn-volt">Request the data room</a>
+          <a href="marketing.html" class="btn btn-ghost">See go-to-market</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESERVE ============ -->
+<section class="section" id="reserve" style="position:relative;overflow:hidden">
+  <div class="hero-bg"><div class="orb orb-c" style="top:-30%;left:36%;opacity:.2"></div></div>
+  <div class="container tc" style="position:relative;z-index:2">
+    <div class="rv">
+      <span data-logo="mark" data-size="56" style="display:flex;justify-content:center"></span>
+      <h2 class="h-xl mt24">Wear the instrument.</h2>
+      <p class="lede mx mt24" style="text-align:center">$99 reserves your place in the first production run.
+        Fully refundable. Ships Q3 2026.</p>
+      <div class="flex gap-12 mt40" style="justify-content:center;flex-wrap:wrap">
+        <a href="#" class="btn btn-volt btn-lg">Reserve — $99</a>
+        <a href="product.html" class="btn btn-ghost btn-lg">Compare editions</a>
+      </div>
+      <div class="flex gap-24 mt40 wrap" style="justify-content:center;opacity:.7">
+        <span class="micro">30-day returns</span><span class="micro">2-year warranty</span>
+        <span class="micro">Ships to 41 countries</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="grid" style="grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;gap:32px">
+      <div>
+        <a class="nav-logo" href="index.html"><span data-logo="mark" data-size="26"></span><span class="wm">Voltwear</span></a>
+        <p class="small mt24" style="max-width:30ch">Instrumenting the human body, one garment at a time.
+          Designed in San Francisco. Knitted in Bình Dương.</p>
+      </div>
+      <div><h5>Product</h5>
+        <a href="product.html#perf">Performance Athlete</a><a href="product.html#gym">Gym Performance</a>
+        <a href="product.html#posture">Posture Edition</a><a href="product.html#elite">Elite Edition</a>
+        <a href="marketing.html#ecosystem">Future ecosystem</a></div>
+      <div><h5>Technology</h5>
+        <a href="#technology">Fabric stack</a><a href="product.html#materials">Materials</a>
+        <a href="app.html">VOLT app</a><a href="#compare">Comparison</a></div>
+      <div><h5>Company</h5>
+        <a href="#investors">Investors</a><a href="brand.html">Brand system</a>
+        <a href="marketing.html">Marketing</a><a href="docs/BRANDBOOK.md">Brand book</a></div>
+      <div><h5>Legal</h5>
+        <a href="#">Privacy</a><a href="#">Biometric data policy</a><a href="#">Regulatory</a><a href="#">Patents</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> VOLTWEAR, Inc. All rights reserved.</span>
+      <span>VOLTWEAR is not a medical device. FDA 510(k) pending for ECG indications.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/shirt.js?v=6"></script>
+<script>
+/* ---------- PAGE SCRIPT ---------- */
+window.VWPage = function(){
+
+  /* --- exploded fabric stack --- */
+  var COLORS = [
+    ['#1A2430','#0E141C'], ['#2A1E24','#140E12'], ['#101C22','#08121A'],
+    ['#141A12','#0A0F09'], ['#101826','#080D16'], ['#1E2630','#0D131A']
+  ];
+  var EDGE = ['#3EE8B5','#FF3B5C','#8B5CFF','#C8FF3C','#2F80FF','#EEF2F7'];
+  var layers = [].slice.call(document.querySelectorAll('.layer'));
+  var GAP = 30;
+  layers.forEach(function(l,i){
+    var z = parseInt(l.getAttribute('data-layer'),10);
+    l.style.cssText += ';position:absolute;inset:0;border-radius:26px;'+
+      'background:linear-gradient(135deg,'+COLORS[z][0]+','+COLORS[z][1]+');'+
+      'border:1px solid '+EDGE[z]+'44;'+
+      'box-shadow:0 20px 50px -18px rgba(0,0,0,.9), inset 0 0 60px '+EDGE[z]+'12;'+
+      'transition:transform .7s cubic-bezier(.16,1,.3,1), border-color .5s, box-shadow .5s;'+
+      'transform:translateZ('+(z*GAP)+'px)';
+    var inner = document.createElement('div');
+    inner.style.cssText='position:absolute;inset:14px;border-radius:16px;border:1px dashed '+EDGE[z]+'22';
+    l.appendChild(inner);
+    if (z===4){ /* trace layer visual */
+      l.insertAdjacentHTML('beforeend','<svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%;opacity:.55"><g fill="none" stroke="#2F80FF" stroke-width="1"><path d="M12 50h20l8-12h20l8 12h20"/><path d="M12 30h30l10 14h36"/><path d="M12 70h26l12-16h38"/></g><g fill="#2F80FF"><circle cx="40" cy="38" r="2"/><circle cx="68" cy="50" r="2"/><circle cx="52" cy="44" r="2"/></g></svg>');
+    }
+    if (z===2){ /* sensor plane */
+      var pts='';
+      [[26,30],[62,26],[40,52],[70,58],[30,70],[58,76]].forEach(function(p){
+        pts+='<rect x="'+(p[0]-4)+'" y="'+(p[1]-4)+'" width="8" height="8" rx="2" fill="#0A0E13" stroke="#C8FF3C" stroke-width="1"/>';
+      });
+      l.insertAdjacentHTML('beforeend','<svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%;opacity:.8">'+pts+'</svg>');
+    }
+    if (z===0 || z===5){
+      l.insertAdjacentHTML('beforeend','<svg viewBox="0 0 100 100" style="position:absolute;inset:0;width:100%;height:100%;opacity:.3"><defs><pattern id="kn'+z+'" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(24)"><path d="M0 3h6" stroke="#ffffff22" stroke-width=".7"/><path d="M3 0v6" stroke="#ffffff14" stroke-width=".7"/></pattern></defs><rect width="100" height="100" fill="url(#kn'+z+')"/></svg>');
+    }
+  });
+
+  function setFocus(idx){
+    layers.forEach(function(l){
+      var z = parseInt(l.getAttribute('data-layer'),10);
+      var lift = (idx === null) ? 0 : (z === idx ? 46 : (z > idx ? 16 : -8));
+      l.style.transform = 'translateZ(' + (z*GAP + lift) + 'px)';
+      l.style.opacity = (idx === null || z === idx) ? 1 : .42;
+      l.style.borderColor = (z === idx) ? EDGE[z] : EDGE[z] + '44';
+    });
+  }
+  document.querySelectorAll('.lyr').forEach(function(li){
+    li.style.cssText='padding:16px 18px;border:1px solid transparent;border-radius:14px;cursor:default;transition:background .35s,border-color .35s';
+    li.addEventListener('mouseenter', function(){
+      li.style.background='rgba(255,255,255,.045)'; li.style.borderColor='var(--hairline)';
+      setFocus(parseInt(li.getAttribute('data-i'),10));
+    });
+    li.addEventListener('mouseleave', function(){
+      li.style.background=''; li.style.borderColor='transparent'; setFocus(null);
+    });
+  });
+
+  /* --- revenue chart --- */
+  var rev=[14,96,340,760,1310];
+  var line=document.getElementById('revLine'), area=document.getElementById('revArea');
+  if(line){ line.setAttribute('d', VWSpark(rev,420,100,false)); area.setAttribute('d', VWSpark(rev,420,100,true)); }
+
+  /* --- mini app screens --- */
+  function ring(score,size,color,label){
+    var r=size/2-9, c=2*Math.PI*r;
+    return '<svg viewBox="0 0 '+size+' '+size+'" style="width:'+size+'px;height:'+size+'px">'+
+      '<circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="9"/>'+
+      '<circle cx="'+size/2+'" cy="'+size/2+'" r="'+r+'" fill="none" stroke="'+color+'" stroke-width="9" stroke-linecap="round" '+
+      'stroke-dasharray="'+(c*score/100).toFixed(1)+' '+c.toFixed(1)+'" transform="rotate(-90 '+size/2+' '+size/2+')"/>'+
+      '<text x="'+size/2+'" y="'+(size/2+2)+'" text-anchor="middle" font-family="Inter Tight" font-size="34" font-weight="600" fill="#EEF2F7">'+score+'</text>'+
+      '<text x="'+size/2+'" y="'+(size/2+22)+'" text-anchor="middle" font-family="JetBrains Mono" font-size="8" letter-spacing="1.5" fill="#7C8A9C">'+label+'</text></svg>';
+  }
+
+  var a=document.getElementById('mini-a');
+  if(a) a.innerHTML =
+    '<div style="padding:14px 4px"><div class="micro">Live workout</div>'+
+    '<div class="h-md mt8" style="font-family:var(--f-display)">Zone 4 · 18:22</div>'+
+    '<div class="app-card mt16"><div class="micro">ECG · Lead II</div>'+
+    '<svg viewBox="0 0 260 56" style="width:100%;margin-top:8px"><path d="'+VWWave(260,56,4,1)+'" fill="none" stroke="#FF3B5C" stroke-width="1.6" stroke-linejoin="round"/></svg></div>'+
+    '<div class="app-card mt16"><div class="micro">Muscle activation</div>'+
+    '<div style="display:flex;gap:5px;align-items:flex-end;height:64px;margin-top:10px">'+
+    [72,94,58,86,41,67,88,53].map(function(v,i){return '<i style="flex:1;height:'+v+'%;border-radius:3px;display:block;background:linear-gradient(180deg,#C8FF3C,#3EE8B5);opacity:'+(0.5+v/200)+'"></i>';}).join('')+
+    '</div></div></div>';
+
+  var b=document.getElementById('mini-b');
+  if(b) b.innerHTML =
+    '<div style="padding:10px 4px 0"><div class="flex between center"><div><div class="micro">Tuesday · 14 Apr</div>'+
+    '<div style="font-family:var(--f-display);font-size:21px;font-weight:600;letter-spacing:-.02em;margin-top:2px">Good morning, Kai</div></div>'+
+    '<div style="width:32px;height:32px;border-radius:50%;background:var(--g-arc)"></div></div>'+
+    '<div style="display:flex;justify-content:center;margin:18px 0 6px">'+ring(87,168,'#C8FF3C','RECOVERY')+'</div>'+
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px">'+
+    '<div class="app-card"><div class="micro">HRV</div><div style="font-family:var(--f-display);font-size:22px;font-weight:600;margin-top:3px">98<span style="font-size:10px;color:#7C8A9C"> ms</span></div>'+
+    '<svg viewBox="0 0 90 22" style="width:100%;margin-top:4px"><path d="'+VWSpark([62,70,66,78,74,88,98],90,22,false)+'" fill="none" stroke="#3EE8B5" stroke-width="1.5"/></svg></div>'+
+    '<div class="app-card"><div class="micro">RHR</div><div style="font-family:var(--f-display);font-size:22px;font-weight:600;margin-top:3px">46<span style="font-size:10px;color:#7C8A9C"> bpm</span></div>'+
+    '<svg viewBox="0 0 90 22" style="width:100%;margin-top:4px"><path d="'+VWSpark([52,50,49,51,48,47,46],90,22,false)+'" fill="none" stroke="#FF3B5C" stroke-width="1.5"/></svg></div>'+
+    '<div class="app-card"><div class="micro">Sleep</div><div style="font-family:var(--f-display);font-size:22px;font-weight:600;margin-top:3px">7:42</div></div>'+
+    '<div class="app-card"><div class="micro">Strain</div><div style="font-family:var(--f-display);font-size:22px;font-weight:600;margin-top:3px">11.4</div></div></div>'+
+    '<div class="app-card mt16" style="border-color:rgba(139,92,255,.35);background:rgba(139,92,255,.09)">'+
+    '<div class="micro" style="color:#B49BFF">VOLT-1 · Today</div>'+
+    '<div style="font-size:12.5px;line-height:1.5;margin-top:6px;color:#EEF2F7">Green light. Push the threshold session — but cap it at 42 min, your left erector is still 9% below baseline.</div></div></div>';
+
+  var c=document.getElementById('mini-c');
+  if(c) c.innerHTML =
+    '<div style="padding:14px 4px"><div class="micro">Posture · Today</div>'+
+    '<div class="h-md mt8" style="font-family:var(--f-display)">92<span style="font-size:14px;color:#7C8A9C">/100</span></div>'+
+    '<div style="display:flex;justify-content:center;margin-top:12px">'+
+    '<svg viewBox="0 0 120 230" style="height:230px"><g fill="none" stroke="rgba(255,255,255,.12)" stroke-width="1">'+
+    '<ellipse cx="60" cy="24" rx="17" ry="19"/><path d="M60 43v22"/></g>'+
+    '<path d="M60 62 C52 96 52 130 58 164 C62 188 62 200 60 212" fill="none" stroke="#3EE8B5" stroke-width="4" stroke-linecap="round"/>'+
+    '<g fill="#3EE8B5">'+[70,96,122,148,174,196].map(function(y,i){return '<circle cx="'+(60-[2,6,7,4,0,0][i])+'" cy="'+y+'" r="3.2"/>';}).join('')+'</g>'+
+    '<path d="M34 72 h52" stroke="#C8FF3C" stroke-width="2" stroke-dasharray="3 3"/>'+
+    '<text x="92" y="70" font-family="JetBrains Mono" font-size="7" fill="#C8FF3C">+2.1°</text>'+
+    '</svg></div>'+
+    '<div class="app-card mt16"><div class="flex between"><span class="micro">Cervical</span><span class="micro" style="color:#3EE8B5">GOOD</span></div>'+
+    '<div class="bar mt8" style="height:5px"><i style="width:88%;background:#3EE8B5"></i></div></div>'+
+    '<div class="app-card mt8"><div class="flex between"><span class="micro">Thoracic</span><span class="micro" style="color:#FFB020">WATCH</span></div>'+
+    '<div class="bar mt8" style="height:5px"><i style="width:61%;background:#FFB020"></i></div></div></div>';
+};
+</script>
+<script src="assets/js/core.js?v=6"></script>
+</body>
+</html>
