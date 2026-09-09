@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VOLTWEAR — Clothing that measures how you move</title>
+<meta name="description" content="Voltwear garments carry insulated conductive threads over their structural seams. As the body moves, the threads deform and their capacitance changes. A removable Bluetooth micro-pod reads those changes and the app turns them into posture nudges, rep counts and form feedback.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0E13'/%3E%3Cpath d='M6 7 L16 27 L26 7' stroke='%23E09A5E' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M19 10 L14 17 L17 17 L13 24' stroke='%23EEF2F7' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@300;350;400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/core.css?v=7">
+<link rel="stylesheet" href="assets/css/landing.css?v=1">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container">
+    <a class="nav-logo" href="index.html">
+      <span data-logo="mark" data-size="26" data-grad="false"></span>
+      <span class="wm">Voltwear</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#garments">Garments</a>
+      <a href="#modes">App</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#facts">Facts</a>
+      <a href="marketing.html#team">Team</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#pricing" class="btn btn-volt btn-sm">Pre-order · from ₹14,999</a>
+      <button class="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="orb orb-a"></div><div class="orb orb-b"></div>
+    <div class="grid-fade"></div><div class="vignette"></div>
+  </div>
+
+  <div class="container" style="position:relative;z-index:2">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center" class="hero-grid">
+
+      <div>
+        <div class="pill rv in" style="margin-bottom:26px"><span class="dot"></span> Smart clothing · Posture &amp; workout tracking</div>
+        <h1 class="h-xxl rv">Clothing that<br>measures how<br><span class="grad-volt">you move.</span></h1>
+        <p class="lede mt24 rv rv-d1">
+          Voltwear garments carry insulated conductive threads sewn along their structural seams.
+          When you bend, twist or lift, the threads stretch with the fabric and their capacitance
+          changes. A small, removable pod reads that change and sends it to your phone.
+        </p>
+        <div class="flex gap-12 wrap mt40 rv rv-d2 hero-actions">
+          <a href="#pricing" class="btn btn-volt btn-lg btn-arrow">See pricing
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#how" class="btn btn-ghost btn-lg">How it works</a>
+        </div>
+
+        <ul class="grid g2 mt64 rv rv-d3" style="gap:14px 24px;border-top:1px solid var(--hairline);padding-top:26px">
+          <li><div class="h-xs">Capacitive thread sensing</div><div class="small mt8">No cameras, no straps, no gel electrodes.</div></li>
+          <li><div class="h-xs">Removable Bluetooth micro-pod</div><div class="small mt8">Unclip it, wash the garment like any other.</div></li>
+          <li><div class="h-xs">Passive posture nudges</div><div class="small mt8">A quiet prompt when you slump for too long.</div></li>
+          <li><div class="h-xs">Active workout tracking</div><div class="small mt8">Rep counting and form feedback from the garment itself.</div></li>
+        </ul>
+      </div>
+
+      <!-- Stationary product photography: front / side / back -->
+      <div class="viewer rv rv-d1" data-viewer tabindex="0" aria-label="Voltwear T-shirt, front, side and back views">
+        <div class="viewer-frame">
+          <img src="assets/images/products/tee-front.png" data-view="front" alt="Voltwear short-sleeve T-shirt, front view, showing the copper conductive seams over the shoulders and sides" class="on">
+          <img src="assets/images/products/tee-side.png"  data-view="side"  alt="Voltwear T-shirt, side view, showing the conductive seam running down the side panel">
+          <img src="assets/images/products/tee-back.png"  data-view="back"  alt="Voltwear T-shirt, back view, showing the spine seam and the micro-pod dock below the collar">
+          <div class="viewer-note note-pod"><div class="k">Micro-pod dock</div><div class="t">Sits below the collar at the back. Unclips in one motion.</div></div>
+          <div class="viewer-note note-seam"><div class="k">Conductive seam</div><div class="t">Insulated thread stitched over the seam line, not printed on top of it.</div></div>
+        </div>
+        <div class="seg seg-volt" role="tablist">
+          <button data-view-btn="front" class="on">Front</button>
+          <button data-view-btn="side">Side</button>
+          <button data-view-btn="back">Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section-alt" id="how">
+  <div class="container">
+    <div class="grid g2 gap-40 mb64" style="align-items:end">
+      <div class="rv">
+        <div class="eyebrow">How it works</div>
+        <h2 class="h-xl">The seam is<br>the sensor.</h2>
+      </div>
+      <p class="lede rv rv-d1">
+        A garment already has seams exactly where the body articulates: shoulders, sides, spine,
+        hips, knees. Voltwear puts the measurement there instead of adding hardware on top.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step rv">
+        <div class="n">01 · THREAD</div>
+        <h3>Insulated conductive thread</h3>
+        <p class="small">A conductive core wrapped in an insulating jacket is sewn over the structural seams of the garment. The insulation keeps sweat and skin contact from affecting the reading.</p>
+      </div>
+      <div class="step rv rv-d1">
+        <div class="n">02 · DEFORMATION</div>
+        <h3>Capacitance changes as you move</h3>
+        <p class="small">When a seam stretches or bends, the geometry of the thread changes and so does its capacitance. Each seam becomes one channel that tracks how much that part of the body has moved.</p>
+      </div>
+      <div class="step rv rv-d2">
+        <div class="n">03 · MICRO-POD</div>
+        <h3>A removable Bluetooth pod reads the channels</h3>
+        <p class="small">The pod clips into a dock below the collar, where the seams converge. It measures each channel, combines them into a 3D picture of body movement and sends the result over Bluetooth Low Energy.</p>
+      </div>
+      <div class="step rv rv-d3">
+        <div class="n">04 · APP</div>
+        <h3>The app turns movement into feedback</h3>
+        <p class="small">In passive mode it watches your posture through the day and nudges you when you slump. In active mode it counts reps and flags form that drifts from your own baseline.</p>
+      </div>
+    </div>
+
+    <div class="grid g2 mt64" style="gap:18px">
+      <figure class="photo rv" style="aspect-ratio:16/10">
+        <img src="assets/images/products/seam.jpg" alt="Macro photograph of the copper conductive thread stitched along a seam of the dark knit fabric">
+        <figcaption class="cap">Conductive thread over a structural seam</figcaption>
+      </figure>
+      <figure class="photo rv rv-d1" style="aspect-ratio:16/10">
+        <img src="assets/images/products/pod.jpg" alt="Close-up of the removable Bluetooth micro-pod clipped into its fabric dock at the collar">
+        <figcaption class="cap">Micro-pod in its collar dock</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GARMENTS ============ -->
+<section class="section" id="garments">
+  <div class="container">
+    <div class="flex between wrap gap-24 mb64 rv" style="align-items:flex-end">
+      <div><div class="eyebrow">The garments</div><h2 class="h-xl">One sensing method.<br>Five garments.</h2></div>
+      <p class="body" style="max-width:40ch">Every piece uses the same thread, the same pod and the same app. What changes is which seams are instrumented, and therefore which joints the garment can see.</p>
+    </div>
+
+    <div class="products">
+      <article class="product rv">
+        <div class="photo"><img src="assets/images/products/tee-front.png" data-alt="assets/images/products/tee-back.png" alt="Voltwear short-sleeve T-shirt"></div>
+        <div class="info">
+          <span class="tag">Upper body</span>
+          <h3 class="mt16">T-shirt</h3>
+          <p class="small mt8">Short-sleeve. Instrumented seams over the shoulders, side panels and spine. Tracks upper-back posture and the trunk during pressing and pulling movements.</p>
+          <div class="zones"><span>Shoulders</span><span>Sides</span><span>Spine</span></div>
+        </div>
+      </article>
+
+      <article class="product rv rv-d1">
+        <div class="photo"><img src="assets/images/products/ls-front.png" data-alt="assets/images/products/ls-back.png" alt="Voltwear long-sleeve top"></div>
+        <div class="info">
+          <span class="tag">Upper body</span>
+          <h3 class="mt16">Long-sleeve</h3>
+          <p class="small mt8">Adds a seam channel along each arm, so elbow flexion is visible alongside the shoulders and spine. The better choice for cooler conditions and for arm-dominant lifts.</p>
+          <div class="zones"><span>Shoulders</span><span>Arms</span><span>Sides</span><span>Spine</span></div>
+        </div>
+      </article>
+
+      <article class="product rv rv-d2">
+        <div class="photo"><img src="assets/images/products/bra.jpg" alt="Voltwear sports bra"></div>
+        <div class="info">
+          <span class="tag">Upper body</span>
+          <h3 class="mt16">Sports bra</h3>
+          <p class="small mt8">Racerback with instrumented straps and under-band. Tracks shoulder position and upper-back posture on its own, or under any other top.</p>
+          <div class="zones"><span>Straps</span><span>Under-band</span><span>Upper back</span></div>
+        </div>
+      </article>
+
+      <article class="product rv">
+        <div class="photo"><img src="assets/images/products/pants.jpg" alt="Voltwear training pants"></div>
+        <div class="info">
+          <span class="tag">Lower body</span>
+          <h3 class="mt16">Pants</h3>
+          <p class="small mt8">Compression fit. Seams along the outer leg and around the knee track hip and knee angle for squats, lunges and running.</p>
+          <div class="zones"><span>Hips</span><span>Outer leg</span><span>Knees</span></div>
+        </div>
+      </article>
+
+      <article class="product wide rv rv-d1">
+        <div class="photo"><img src="assets/images/products/suit.jpg" alt="Voltwear full-body tracker suit"></div>
+        <div class="info">
+          <span class="tag tag-volt">Full body</span>
+          <h3 class="mt16">Full-body tracker</h3>
+          <p class="small mt8">Top and pants instrumented as one system. Upper and lower body seams are read together, so the app sees the whole movement chain: shoulders, spine, hips and knees in the same frame.</p>
+          <p class="small mt8">This is the configuration in the Elite package.</p>
+          <div class="zones"><span>Shoulders</span><span>Arms</span><span>Spine</span><span>Hips</span><span>Knees</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THREE-VIEW SHEETS ============ -->
+<section class="section section-alt" id="views">
+  <div class="container">
+    <div class="tc mb64 rv">
+      <div class="eyebrow no-rule" style="display:flex;justify-content:center">Front · Side · Back</div>
+      <h2 class="h-xl">Where the seams run.</h2>
+      <p class="lede mx mt24" style="text-align:center">The conductive thread follows the raglan shoulder seams, the side panels and the centre-back seam. The pod dock sits at the top of the spine seam, below the collar.</p>
+    </div>
+    <div class="grid" style="gap:18px">
+      <figure class="sheet rv">
+        <img src="assets/images/products/tee-views.jpg" alt="Voltwear short-sleeve T-shirt shown from the front, side and back">
+        <figcaption class="bar"><span class="h-xs">T-shirt</span><span class="micro">Short sleeve · shoulders, sides, spine</span></figcaption>
+      </figure>
+      <figure class="sheet rv rv-d1">
+        <img src="assets/images/products/longsleeve-views.jpg" alt="Voltwear long-sleeve top shown from the front, side and back">
+        <figcaption class="bar"><span class="h-xs">Long-sleeve</span><span class="micro">Long sleeve · shoulders, arms, sides, spine</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TWO MODES ============ -->
+<section class="section" id="modes">
+  <div class="container">
+    <div class="grid g2 gap-40 mb64" style="align-items:end">
+      <div class="rv"><div class="eyebrow">The app</div><h2 class="h-xl">Two modes.<br>One garment.</h2></div>
+      <p class="lede rv rv-d1">The pod streams seam data over Bluetooth Low Energy. The app does the interpretation, so the garment itself has no screen, no buttons and nothing to charge except the pod.</p>
+    </div>
+
+    <div class="grid" style="gap:18px">
+      <div class="mode rv">
+        <figure class="photo"><figcaption class="cap">Spine seam and pod dock, T-shirt back</figcaption><img src="assets/images/products/desk.jpg" alt="Back of the Voltwear T-shirt showing the centre-back spine seam and the micro-pod dock below the collar"></figure>
+        <div class="txt">
+          <div class="eyebrow">Passive · Posture</div>
+          <h3 class="h-md">Posture nudges while you work</h3>
+          <p class="body mt16">With the garment on and the app in the background, the spine and shoulder seams are sampled through the day. When your position drifts from your own upright baseline and stays there, the phone sends a short prompt. Sit back up and it stops.</p>
+          <ul>
+            <li>You set the baseline by sitting or standing upright once during setup.</li>
+            <li>Nudges are timed, not constant. You choose how long a slump is tolerated before a prompt.</li>
+            <li>A daily summary shows how much of the day was spent near your baseline.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mode flip rv">
+        <figure class="photo"><figcaption class="cap">Shoulder, arm and spine seams, long-sleeve back</figcaption><img src="assets/images/products/gym.jpg" alt="Back of the Voltwear long-sleeve showing the shoulder, arm and spine seams read during a set"></figure>
+        <div class="txt">
+          <div class="eyebrow">Active · Workout</div>
+          <h3 class="h-md">Rep counting and form feedback</h3>
+          <p class="body mt16">Start a set in the app and the seam channels are read at a higher rate. Each repetition produces a repeatable pattern across the shoulder, spine, hip and knee seams, which the app counts. If the pattern changes over the set, for example the back rounding or one side leading, it tells you which seam moved differently.</p>
+          <ul>
+            <li>Rep counts for squats, lunges, presses, rows and similar repeated movements.</li>
+            <li>Form feedback compares later reps to your own first clean reps in the set.</li>
+            <li>Lower-body movements need the pants or the full-body tracker.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section section-alt" id="pricing">
+  <div class="container">
+    <div class="tc mb64 rv">
+      <div class="eyebrow no-rule" style="display:flex;justify-content:center">Pricing</div>
+      <h2 class="h-xl">Two packages.</h2>
+      <p class="lede mx mt24" style="text-align:center">Both include the garment, the micro-pod, a charging cable and the app for iOS and Android. Prices in Indian rupees, inclusive of GST.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan rv">
+        <span class="tag">Basic</span>
+        <div class="price">₹14,999</div>
+        <p class="small mt8">One upper-body garment with a single micro-pod.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#E09A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Choice of T-shirt, long-sleeve or sports bra</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#E09A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>One removable Bluetooth micro-pod</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#E09A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Passive posture mode</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#E09A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Active workout mode for upper-body and trunk movements</li>
+        </ul>
+        <a href="mailto:hello@voltwear.in?subject=Pre-order%20Basic" class="btn btn-ghost">Pre-order Basic</a>
+      </div>
+
+      <div class="plan elite rv rv-d1">
+        <span class="tag tag-volt">Elite</span>
+        <div class="price">₹39,999</div>
+        <p class="small mt8">The full-body tracker: top and pants with two micro-pods.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#E09A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Instrumented top (T-shirt or long-sleeve) and pants</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#E09A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Two micro-pods, read together by the app as one system</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#E09A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Passive posture mode</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke="#E09A5E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Active workout mode including squats, lunges and other lower-body movements</li>
+        </ul>
+        <a href="mailto:hello@voltwear.in?subject=Pre-order%20Elite" class="btn btn-volt">Pre-order Elite</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLAIN FACTS ============ -->
+<section class="section" id="facts">
+  <div class="container">
+    <div class="grid g2 gap-40 mb64" style="align-items:end">
+      <div class="rv"><div class="eyebrow">Plain facts</div><h2 class="h-xl">What it does.<br><span class="c-dim">What it doesn't.</span></h2></div>
+      <p class="lede rv rv-d1">Capacitive thread sensing measures fabric deformation. That is all it measures. The following is worth knowing before you buy.</p>
+    </div>
+    <div class="facts">
+      <div class="fact rv"><h4>It measures movement, not physiology</h4><p class="small">There is no heart-rate, ECG, muscle-activation or temperature sensing in these garments. The threads report how much each seam has stretched or bent, and the app works only from that.</p></div>
+      <div class="fact rv rv-d1"><h4>Fit matters</h4><p class="small">The seams have to move with the body for the reading to mean anything. A loose garment gives a weaker, noisier signal, so the garments are cut close to the body.</p></div>
+      <div class="fact rv rv-d2"><h4>Washing</h4><p class="small">Unclip the pod, then machine-wash the garment cold on a gentle cycle and line-dry. The thread is insulated and sewn in, so it does not need any special handling beyond that.</p></div>
+      <div class="fact rv rv-d3"><h4>Not a medical device</h4><p class="small">Voltwear is a fitness and posture aid. It is not designed, tested or certified to diagnose, treat or monitor any medical condition.</p></div>
+      <div class="fact rv rv-d4"><h4>Feedback is relative to you</h4><p class="small">Posture nudges and form feedback compare you against your own baseline, captured during setup and at the start of each set. The app does not judge you against a population model.</p></div>
+      <div class="fact rv rv-d5"><h4>Your data</h4><p class="small">Seam data is processed on the phone. Session history stays in the app unless you choose to export it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section section-alt" style="position:relative;overflow:hidden">
+  <div class="hero-bg"><div class="orb orb-a" style="top:-40%;left:30%;right:auto"></div></div>
+  <div class="container tc" style="position:relative;z-index:2">
+    <div class="rv">
+      <span data-logo="mark" data-size="56" data-grad="false" style="display:flex;justify-content:center;color:var(--copper)"></span>
+      <h2 class="h-xl mt24">Wear the measurement.</h2>
+      <p class="lede mx mt24" style="text-align:center">Basic from ₹14,999. Elite full-body tracker at ₹39,999.</p>
+      <div class="flex gap-12 mt40" style="justify-content:center;flex-wrap:wrap">
+        <a href="#pricing" class="btn btn-volt btn-lg">Choose a package</a>
+        <a href="#how" class="btn btn-ghost btn-lg">Read how it works</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="grid" style="grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px">
+      <div>
+        <a class="nav-logo" href="index.html"><span data-logo="mark" data-size="26" data-grad="false"></span><span class="wm">Voltwear</span></a>
+        <p class="small mt24" style="max-width:32ch">Smart clothing with capacitive thread sensing for posture and workout tracking.</p>
+      </div>
+      <div><h5>Garments</h5>
+        <a href="#garments">T-shirt</a><a href="#garments">Long-sleeve</a><a href="#garments">Sports bra</a><a href="#garments">Pants</a><a href="#garments">Full-body tracker</a></div>
+      <div><h5>Learn</h5>
+        <a href="#how">How it works</a><a href="#modes">The app</a><a href="#facts">Plain facts</a><a href="#pricing">Pricing</a></div>
+      <div><h5>Company</h5>
+        <a href="marketing.html#team">Team</a><a href="mailto:hello@voltwear.in">Contact</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Voltwear. All rights reserved.</span>
+      <span>Voltwear is not a medical device.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/core.js?v=7"></script>
+<script src="assets/js/landing.js?v=1"></script>
+</body>
+</html>
